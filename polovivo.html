@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vw Polo Vivo | M.I Motor Sales</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+<div class="logo">
+
+<img src="pictures/logo.png" alt="M.I Motor Sales Logo">
+
+<div>
+
+<h1>M.I Car Sales</h1>
+
+<p>Wishing You Many Miles With Smiles</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="vehicles.html">Vehicles</a></li>
+
+<li><a href="sellcar.html">Sell Your Car</a></li>
+
+<li><a href="index.html#location">Location</a></li>
+
+<li><a href="index.html#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<!-- ================= PAGE TITLE ================= -->
+
+<section class="page-title">
+
+<h1>Vw Polo Vivo 1.4</h1>
+
+<p>Premium Quality Pre-Owned Vehicle</p>
+
+</section>
+
+<!-- ================= VEHICLE DETAILS ================= -->
+
+<section class="vehicle-details">
+
+<!-- LEFT SIDE -->
+
+<div class="vehicle-gallery">
+
+<div class="slider">
+
+<img id="mainImage"
+src="pictures/cars/Vwpolomain.jpeg"
+class="main-image"
+alt="Vw Polo Vivo">
+
+<button class="prev" onclick="previousImage()">&#10094;</button>
+
+<button class="next" onclick="nextImage()">&#10095;</button>
+
+</div>
+
+<div class="thumbnails">
+
+<img src="pictures/cars/vivo1.jpeg"
+onclick="setImage(1)"
+alt="BMW">
+
+<img src="pictures/cars/vivo2.jpeg"
+onclick="setImage(2)"
+alt="BMW">
+
+<img src="pictures/cars/vivo3.jpeg"
+onclick="setImage(3)"
+alt="BMW">
+
+<img src="pictures/cars/vivo4.jpeg"
+onclick="setImage(0)"
+alt="BMW">
+
+<img src="pictures/cars/vivo5.jpeg"
+onclick="setImage(1)"
+alt="BMW">
+
+<img src="pictures/cars/vivo6.jpeg"
+onclick="setImage(2)"
+alt="BMW">
+
+<img src="pictures/cars/vivo7.jpeg"
+onclick="setImage(3)"
+alt="BMW">
+
+<img src="pictures/cars/vivo8.jpeg"
+onclick="setImage(3)"
+alt="BMW">
+
+</div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div class="vehicle-info">
+
+<h1>Vw Polo Vivo</h1>
+
+<h2 class="price">R99 900</h2>
+
+<div class="badges">
+
+<span>✔ Full Service History</span>
+
+<span>✔ Trade-ins Welcome</span>
+
+</div>
+
+<table class="specs">
+
+<tr>
+
+<td><strong>Year</strong></td>
+
+<td>2010</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Mileage</strong></td>
+
+<td>174 994 km</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Transmission</strong></td>
+
+<td>Manual</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Fuel Type</strong></td>
+
+<td>Petrol</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Engine</strong></td>
+
+<td>1.4L</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Colour</strong></td>
+
+<td>Silver</td>
+
+</tr>
+
+<tr>
+
+<td><strong>Condition</strong></td>
+
+<td>Excellent</td>
+
+</tr>
+
+</table>
+
+<h3>Description</h3>
+
+<p>
+
+This Vw Polo Vivo has been carefully inspected and is in excellent condition. It offers a smooth Manual transmission, comfortable interior, stylish alloy wheels and outstanding driving performance.
+
+</p>
+
+<div class="buttons">
+
+<a href="#contact-form" class="gold-btn">Enquire Now</a>
+
+
+<a href="https://wa.me/27710270924?text=Hello%20M.I%20Car%20Sales,%20I'm%20interested%20in%20the%20Vw%203%203%20Polo Vivo%20priced%20at%20R99%20900.%20Please%20contact%20me." target="_blank" class="black-btn">
+    WhatsApp Us
+</a>
+
+</div>
+
+</section>
+<!-- ================= VEHICLE FEATURES ================= -->
+
+<section class="vehicle-features">
+
+<h2>Vehicle Features</h2>
+
+<div class="line"></div>
+
+<div class="features-grid">
+
+<div>✔ Air Conditioning</div>
+
+<div>✔ Power Steering</div>
+
+<div> No Electric Windows</div>
+
+<div> No Cruise Control</div>
+
+<div>✔ Cloth interior</div>
+
+<div>✔ ABS Brakes</div>
+
+<div>✔ Airbags</div>
+
+<div> No Electric Mirrors</div>
+
+<div>✔ Multifunctional Steering Wheel</div>
+
+<div>✔ Bluetooth / Aux Android Radio</div>
+
+<div>✔ Full Service History</div>
+
+<div>✔ Spare Keys</div>
+
+</div>
+
+</section>
+
+</section>
+
+<!-- ================= ENQUIRY ================= -->
+
+<section class="contact" id="contact-form">
+
+<h2>Enquire About This Vehicle</h2>
+
+<div class="line"></div>
+
+<form>
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="text" placeholder="Phone Number" required>
+
+<textarea placeholder="I'm interested in the Vw Polo Vivo. Please contact me."></textarea>
+
+<button type="submit">Send Enquiry</button>
+
+</form>
+
+</section>
+
+<!-- ================= SIMILAR VEHICLES ================= -->
+
+<section class="featured">
+
+<h2>You May Also Like</h2>
+
+<div class="line"></div>
+
+<div class="cars">
+
+<div class="car-card">
+
+<img src="pictures/cars/nissan.jpeg" alt="Nissan X-Trail">
+
+<h3>Nissan X-Trail</h3>
+
+<p class="price">R109 900</p>
+
+<p>2013 Model</p>
+
+<p>166 197 km</p>
+
+<p>Manual</p>
+
+<a href="xtrail.html" class="details-btn">View Details</a>
+
+</div>
+
+<div class="car-card">
+
+<img src="pictures/cars/toyota quest.jpeg" alt="Toyota Corolla Quest">
+
+<h3>Toyota Corolla Quest 1.6 Plus</h3>
+
+<p class="price">R129 900</p>
+
+<p>2018 Model</p>
+
+<p>167 330 km</p>
+
+<p>Manual</p>
+
+<a href="quest.html" class="details-btn">View Details</a>
+
+</div>
+
+<div class="car-card">
+
+<img src="pictures/cars/bwm 3 series.jpeg" alt="Volkswagen Tiguan">
+
+<h3>BMW E30 320i idrive Spec</h3>
+
+<p class="price">R109 900</p>
+
+<p>2010 Model</p>
+
+<p>192 451 km</p>
+
+<p>Automatic</p>
+
+<a href="bmw320i.html" class="details-btn">View Details</a>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+<p>© 2026 M.I Motor Sales</p>
+
+<p>Wishing You Many Miles With Smiles</p>
+
+</footer>
+<script>
+
+// =======================
+// IMAGE SLIDER
+// =======================
+
+const images = [
+    "pictures/cars/vivo1.jpeg",
+    "pictures/cars/vivo2.jpeg",
+    "pictures/cars/vivo3.jpeg",
+    "pictures/cars/vivo4.jpeg",
+    "pictures/cars/vivo5.jpeg",
+    "pictures/cars/vivo6.jpeg",
+    "pictures/cars/vivo7.jpeg",
+    "pictures/cars/vivo8.jpeg",
+];
+
+let currentImage = 0;
+
+const mainImage = document.getElementById("mainImage");
+const thumbnails = document.querySelectorAll(".thumbnails img");
+
+function updateImage(){
+
+    mainImage.src = images[currentImage];
+
+    thumbnails.forEach((thumb,index)=>{
+
+        if(index === currentImage){
+            thumb.style.border = "3px solid #FFBA08";
+            thumb.style.opacity = "1";
+        }else{
+            thumb.style.border = "3px solid transparent";
+            thumb.style.opacity = "0.7";
+        }
+
+    });
+
+}
+
+function nextImage(){
+
+    currentImage++;
+
+    if(currentImage >= images.length){
+        currentImage = 0;
+    }
+
+    updateImage();
+
+}
+
+function previousImage(){
+
+    currentImage--;
+
+    if(currentImage < 0){
+        currentImage = images.length - 1;
+    }
+
+    updateImage();
+
+}
+
+function setImage(index){
+
+    currentImage = index;
+
+    updateImage();
+
+}
+
+// Keyboard navigation
+
+document.addEventListener("keydown",function(e){
+
+    if(e.key==="ArrowRight"){
+        nextImage();
+    }
+
+    if(e.key==="ArrowLeft"){
+        previousImage();
+    }
+
+});
+
+// Auto slide every 5 seconds
+
+setInterval(nextImage,5000);
+
+// Highlight first image on page load
+
+updateImage();
+
+</script>
+
+</body>
+
+</html>

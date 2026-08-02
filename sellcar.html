@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sell Your Car | M.I Motor Sales</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+
+<img src="pictures/logo.png" alt="M.I Motor Sales">
+
+<div>
+
+<h1>M.I Motor Sales</h1>
+
+<p>Wishing You Many Miles With Smiles</p>
+
+</div>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="index.html">Home</a></li>
+
+<li><a href="vehicles.html">Vehicles</a></li>
+
+<li><a href="sellcar.html" class="active">Sell Your Car</a></li>
+
+<li><a href="location.html">Location</a></li>
+
+<li><a href="index.html#about">About</a></li>
+
+<li><a href="index.html#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
+</header>
+
+<section class="page-title">
+
+<h1>Sell Your Car</h1>
+
+<p>Get a fast, free valuation and sell your vehicle with confidence.</p>
+
+</section>
+
+<section class="contact">
+
+<h2>Vehicle Information</h2>
+
+<div class="line"></div>
+
+<form id="sellCarForm" onsubmit="sendSellCar(event)">
+
+<input type="text" id="name" placeholder="Full Name" required>
+
+<input type="tel" id="phone" placeholder="Phone Number" required>
+
+<input type="email" id="email" placeholder="Email Address" required>
+
+<input type="text" id="make" placeholder="Vehicle Make" required>
+
+<input type="text" id="model" placeholder="Vehicle Model" required>
+
+<input type="number" id="year" placeholder="Year Model" required>
+
+<input type="number" id="mileage" placeholder="Mileage (KM)" required>
+
+<select id="transmission" required>
+    <option value="">Transmission</option>
+    <option>Manual</option>
+    <option>Automatic</option>
+</select>
+
+<select id="fuel" required>
+    <option value="">Fuel Type</option>
+    <option>Petrol</option>
+    <option>Diesel</option>
+    <option>Hybrid</option>
+    <option>Electric</option>
+</select>
+
+<textarea id="description" placeholder="Tell us about your vehicle"></textarea>
+
+<input type="file" accept="image/*" multiple>
+
+<button type="submit">Request a Free Valuation</button>
+
+</form>
+
+</section>
+
+<script>
+
+function sendSellCar(event){
+
+event.preventDefault();
+
+const name = document.getElementById("name").value;
+const phone = document.getElementById("phone").value;
+const email = document.getElementById("email").value;
+const make = document.getElementById("make").value;
+const model = document.getElementById("model").value;
+const year = document.getElementById("year").value;
+const mileage = document.getElementById("mileage").value;
+const transmission = document.getElementById("transmission").value;
+const fuel = document.getElementById("fuel").value;
+const description = document.getElementById("description").value;
+
+const message =
+`SELL MY CAR ENQUIRY
+
+Name: ${name}
+
+Phone: ${phone}
+
+Email: ${email}
+
+Make: ${make}
+
+Model: ${model}
+
+Year: ${year}
+
+Mileage: ${mileage} km
+
+Transmission: ${transmission}
+
+Fuel: ${fuel}
+
+Description: ${description}`;
+
+window.open(
+`https://wa.me/27710270924?text=${encodeURIComponent(message)}`,
+"_blank"
+);
+
+}
+
+</script>
+
+</body>
