@@ -200,17 +200,19 @@
 
 <div class="line"></div>
 
-<form>
+<form id="contactForm">
 
-<input type="text" placeholder="Full Name">
+<input type="text" id="name" placeholder="Full Name" required>
 
-<input type="email" placeholder="Email Address">
+<input type="email" id="email" placeholder="Email Address" required>
 
-<input type="text" placeholder="Phone Number">
+<input type="text" id="phone" placeholder="Phone Number" required>
 
-<textarea placeholder="Message"></textarea>
+<textarea id="message" placeholder="Message" required></textarea>
 
-<button>Send Enquiry</button>
+<button type="button" onclick="sendWhatsApp()">
+    Send Enquiry
+</button>
 
 </form>
 
@@ -223,6 +225,38 @@
 <p>Wishing You Many Miles With Smiles</p>
 
 </footer>
+
+<script>
+function sendWhatsApp() {
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const phone = document.getElementById("phone").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !phone || !message) {
+        alert("Please complete all fields.");
+        return;
+    }
+
+    const text =
+`*NEW ENQUIRY - M.I CAR SALES*
+
+👤 Full Name: ${name}
+
+📧 Email: ${email}
+
+📞 Phone: ${phone}
+
+💬 Message:
+${message}`;
+
+    window.open(
+        "https://wa.me/27710270924?text=" + encodeURIComponent(text),
+        "_blank"
+    );
+}
+</script>
 
 </body>
 </html>
