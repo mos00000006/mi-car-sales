@@ -10,430 +10,245 @@ const websiteDB =
         SUPABASE_KEY
     );
 
-const vehicleList =
-    document.getElementById('vehicle-list');
 
+// =====================================================
+// HOME PAGE
+// =====================================================
+
+const featuredVehicles =
+    document.getElementById('featuredVehicles');
+
+
+// =====================================================
+// THE 4 FEATURED VEHICLES
+// EXACTLY THE SAME AS vehicles.html
+// =====================================================
+
+const featuredCars = [
+
+    {
+        make: 'BMW',
+        model: 'E90 320i iDrive Spec',
+        price: 109900,
+        year: 2010,
+        transmission: 'Automatic',
+        fuel: 'Petrol',
+        mileage: 192451,
+
+        image:
+            'pictures/cars/bwm 3 series.jpeg',
+
+        details:
+            'bmw320i.html'
+    },
+
+
+    {
+        make: 'Nissan',
+        model: 'X-Trail 2.0',
+        price: 0,
+        year: 2013,
+        transmission: 'Manual',
+        fuel: 'Petrol',
+        mileage: 166197,
+
+        image:
+            'pictures/cars/nissan.jpeg',
+
+        details:
+            'xtrail.html'
+    },
+
+
+    {
+        make: 'Toyota',
+        model: 'Corolla Quest 1.6 Plus',
+        price: 129900,
+        year: 2018,
+        transmission: 'Manual',
+        fuel: 'Petrol',
+        mileage: 167330,
+
+        image:
+            'pictures/cars/toyota quest.jpeg',
+
+        details:
+            'toyotaquest.html'
+    },
+
+
+    {
+        make: 'Toyota',
+        model: 'Corolla Verso 1.8 7 Seater',
+        price: 119900,
+        year: 2007,
+        transmission: 'Manual',
+        fuel: 'Petrol',
+        mileage: 227526,
+
+        image:
+            'pictures/cars/versomain.jpeg',
+
+        details:
+            'verso.html'
+    }
+
+];
+
+
+// =====================================================
+// ESCAPE HTML
+// =====================================================
 
 function escapeVehicle(value) {
 
     return String(value ?? '')
-        .replace(/[&<>"']/g, m => ({
-            '&': '&amp;',
-            '<': '&lt;',
-            '>': '&gt;',
-            '"': '&quot;',
-            "'": '&#039;'
-        }[m]));
+        .replace(/[&<>"']/g, function (m) {
+
+            return {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+
+            }[m];
+
+        });
 
 }
 
 
-function vehicleImage(vehicle) {
+// =====================================================
+// PRICE
+// =====================================================
 
-    if (
-        vehicle.photos &&
-        Array.isArray(vehicle.photos) &&
-        vehicle.photos.length
-    ) {
-        return vehicle.photos[0];
-    }
+function formatPrice(price) {
 
-    return 'pictures/logo.png';
+    if (!price || Number(price) === 0) {
 
-}
-
-
-function vehiclePrice(vehicle) {
-
-    if (
-        !vehicle.price ||
-        Number(vehicle.price) === 0
-    ) {
         return 'PENDING!!!';
+
     }
 
     return 'R ' +
-        Number(vehicle.price)
+        Number(price)
             .toLocaleString('en-ZA');
 
 }
 
 
-function vehicleDetailsLink(vehicle) {
+// =====================================================
+// CREATE FEATURED VEHICLE CARD
+// =====================================================
 
-    /*
-       If the vehicle has a detail page stored in
-       Supabase, use it.
+function createFeaturedCard(car) {
 
-       Otherwise use vehicle.html?id=VEHICLE_ID
-       so the exact database vehicle can be opened.
-    */
+    return `
 
-    if (vehicle.detail_page) {
-        return vehicle.detail_page;
-    }
-
-    return 'vehicle.html?id=' +
-        encodeURIComponent(vehicle.id);
-
-}
-
-
-async function loadWebsiteVehicles() {
-
-    if (!vehicleList) {
-        return;
-    }
-
-
-    vehicleList.innerHTML = `
         <div class="car-card">
-            <h3>Loading vehicles...</h3>
-            <p>Please wait.</p>
+
+            <div
+                class="vehicle-image-wrap"
+                style="
+                    position:relative;
+                    overflow:hidden;
+                "
+            >
+
+                <img
+                    src="${escapeVehicle(car.image)}"
+                    alt="${escapeVehicle(
+                        car.make +
+                        ' ' +
+                        car.model
+                    )}"
+                    onerror="
+                        this.onerror=null;
+                        this.src='pictures/logo.png';
+                    "
+                >
+
+            </div>
+
+
+            <h3>
+                ${escapeVehicle(car.make)}
+                ${escapeVehicle(car.model)}
+            </h3>
+
+
+            <p class="price">
+                ${formatPrice(car.price)}
+            </p>
+
+
+            <p>
+                ${escapeVehicle(car.year)} Model
+            </p>
+
+
+            <p>
+                ${Number(car.mileage)
+                    .toLocaleString('en-ZA')} km
+            </p>
+
+
+            <p>
+                ${escapeVehicle(car.transmission)}
+            </p>
+
+
+            <a
+                href="${escapeVehicle(car.details)}"
+                class="details-btn"
+            >
+                View Details
+            </a>
+
         </div>
+
     `;
 
+}
 
-    const {
-        data,
-        error
-    } = await websiteDB
-        .from('vehicles')
-        .select('*')
-        .eq('published', true)
-        .order(
-            'created_at',
-            { ascending: false }
+
+// =====================================================
+// LOAD FEATURED VEHICLES
+// =====================================================
+
+function loadFeaturedVehicles() {
+
+    if (!featuredVehicles) {
+
+        console.log(
+            'Featured vehicle section not found.'
         );
-
-
-    if (error) {
-
-        console.error(
-            'Vehicle loading error:',
-            error
-        );
-
-        vehicleList.innerHTML = `
-            <div class="car-card">
-                <h3>Unable to load vehicles</h3>
-                <p>Please refresh the page.</p>
-            </div>
-        `;
 
         return;
+
     }
 
 
-    const now = Date.now();
-
-    const twentyFourHours =
-        24 * 60 * 60 * 1000;
-
-
-    const visibleVehicles =
-        (data || []).filter(vehicle => {
-
-            /*
-                AVAILABLE
-                ----------------
-                Always show.
-            */
-
-            if (
-                vehicle.status === 'available'
-            ) {
-                return true;
-            }
-
-
-            /*
-                RESERVED
-                ----------------
-                Show on website.
-            */
-
-            if (
-                vehicle.status === 'reserved'
-            ) {
-                return true;
-            }
-
-
-            /*
-                SOLD
-                ----------------
-                Show as SOLD for 24 hours.
-            */
-
-            if (
-                vehicle.status === 'sold'
-            ) {
-
-                if (!vehicle.updated_at) {
-                    return true;
-                }
-
-                const soldTime =
-                    new Date(
-                        vehicle.updated_at
-                    ).getTime();
-
-                return (
-                    now - soldTime
-                ) < twentyFourHours;
-            }
-
-
-            return false;
-
-        });
-
-
-    if (!visibleVehicles.length) {
-
-        vehicleList.innerHTML = `
-            <div class="car-card">
-                <h3>No vehicles currently available</h3>
-                <p>Please check back soon.</p>
-            </div>
-        `;
-
-        return;
-    }
-
-
-    vehicleList.innerHTML =
-        visibleVehicles
-            .map(vehicle => {
-
-                const sold =
-                    vehicle.status === 'sold';
-
-                const reserved =
-                    vehicle.status === 'reserved';
-
-
-                let buttonText =
-                    'View Details';
-
-
-                if (sold) {
-                    buttonText = 'SOLD';
-                }
-
-                if (reserved) {
-                    buttonText = 'RESERVED';
-                }
-
-
-                const detailsLink =
-                    vehicleDetailsLink(vehicle);
-
-
-                return `
-
-                    <div
-                        class="car-card ${
-                            sold
-                                ? 'vehicle-sold'
-                                : ''
-                        }"
-                    >
-
-                        <div
-                            class="vehicle-image-wrap"
-                            style="
-                                position:relative;
-                            "
-                        >
-
-                            <img
-                                src="${escapeVehicle(
-                                    vehicleImage(vehicle)
-                                )}"
-                                alt="${escapeVehicle(
-                                    (
-                                        vehicle.make ||
-                                        ''
-                                    ) +
-                                    ' ' +
-                                    (
-                                        vehicle.model ||
-                                        ''
-                                    )
-                                )}"
-                            >
-
-
-                            ${
-                                sold
-
-                                ?
-
-                                `
-                                <span
-                                    style="
-                                        position:absolute;
-                                        top:15px;
-                                        left:15px;
-                                        background:#c00000;
-                                        color:#fff;
-                                        padding:8px 14px;
-                                        border-radius:20px;
-                                        font-weight:800;
-                                        z-index:2;
-                                    "
-                                >
-                                    SOLD
-                                </span>
-                                `
-
-                                :
-
-                                reserved
-
-                                ?
-
-                                `
-                                <span
-                                    style="
-                                        position:absolute;
-                                        top:15px;
-                                        left:15px;
-                                        background:#ffba08;
-                                        color:#000;
-                                        padding:8px 14px;
-                                        border-radius:20px;
-                                        font-weight:800;
-                                        z-index:2;
-                                    "
-                                >
-                                    RESERVED
-                                </span>
-                                `
-
-                                :
-
-                                ''
-                            }
-
-                        </div>
-
-
-                        <h3>
-                            ${escapeVehicle(
-                                vehicle.make || ''
-                            )}
-                            ${escapeVehicle(
-                                vehicle.model || ''
-                            )}
-                        </h3>
-
-
-                        <p class="price">
-                            ${vehiclePrice(vehicle)}
-                        </p>
-
-
-                        <p>
-                            ${
-                                vehicle.year
-                                    ? escapeVehicle(
-                                        vehicle.year
-                                    ) + ' Model'
-                                    : ''
-                            }
-                        </p>
-
-
-                        <p>
-                            ${
-                                vehicle.mileage
-                                    ? Number(
-                                        vehicle.mileage
-                                    ).toLocaleString(
-                                        'en-ZA'
-                                    ) + ' km'
-                                    : ''
-                            }
-                        </p>
-
-
-                        <p>
-                            ${escapeVehicle(
-                                vehicle.transmission || ''
-                            )}
-                        </p>
-
-
-                        ${
-                            sold
-
-                            ?
-
-                            `
-                            <a
-                                href="#"
-                                class="details-btn"
-                                onclick="return false;"
-                                style="
-                                    background:#777;
-                                    cursor:not-allowed;
-                                "
-                            >
-                                SOLD
-                            </a>
-                            `
-
-                            :
-
-                            reserved
-
-                            ?
-
-                            `
-                            <a
-                                href="${detailsLink}"
-                                class="details-btn"
-                            >
-                                RESERVED
-                            </a>
-                            `
-
-                            :
-
-                            `
-                            <a
-                                href="${detailsLink}"
-                                class="details-btn"
-                            >
-                                View Details
-                            </a>
-                            `
-                        }
-
-                    </div>
-
-                `;
-
-            })
+    // Display the 4 cars immediately
+
+    featuredVehicles.innerHTML =
+        featuredCars
+            .map(
+                createFeaturedCard
+            )
             .join('');
+
+
+    console.log(
+        '4 featured vehicles loaded.'
+    );
 
 }
 
 
-loadWebsiteVehicles();
+// =====================================================
+// START
+// =====================================================
 
-
-/*
-    Automatically refresh every minute.
-
-    If the CRM changes a vehicle to SOLD,
-    the public website will pick it up.
-*/
-
-setInterval(
-    loadWebsiteVehicles,
-    60000
-);
+loadFeaturedVehicles();
