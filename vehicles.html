@@ -4,1658 +4,2048 @@
 <head>
     <link rel="icon" type="image/png" href="pictures/logo.png">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Vehicles | M.I Car Sales</title>
+    <title>Vehicles | M.I Car Sales</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           MOBILE NAVIGATION FIX
+        ===================================================== */
+
+        html,
+        body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        nav {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+
+        nav ul {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: max-content;
+            min-width: 100%;
+            padding: 10px 15px;
+            margin: 0;
+            list-style: none;
+            overflow-x: auto;
+            overflow-y: hidden;
+            white-space: nowrap;
+
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            touch-action: pan-x;
+        }
+
+        nav ul::-webkit-scrollbar {
+            display: none;
+        }
+
+        nav li {
+            flex: 0 0 auto;
+            list-style: none;
+        }
+
+        nav a {
+            display: block;
+            white-space: nowrap;
+            text-decoration: none;
+            cursor: pointer;
+            position: relative;
+            z-index: 20;
+            pointer-events: auto;
+        }
+
+        /* Make the Staff CRM button remain clickable */
+        nav .staff-crm-link {
+            position: relative;
+            z-index: 30;
+            pointer-events: auto;
+        }
+
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media (max-width: 768px) {
+
+            header {
+                position: relative;
+                width: 100%;
+            }
+
+            .logo {
+                width: 100%;
+                max-width: 100%;
+                display: flex;
+                align-items: center;
+            }
+
+            .logo img {
+                flex-shrink: 0;
+            }
+
+            .logo h1,
+            .logo p {
+                max-width: 100%;
+            }
+
+            nav {
+                width: 100%;
+                max-width: 100%;
+                display: block;
+                overflow: hidden;
+                position: relative;
+                z-index: 50;
+            }
+
+            nav ul {
+                width: 100%;
+                min-width: 100%;
+                max-width: 100%;
+                display: flex;
+                flex-wrap: nowrap;
+                align-items: center;
+
+                overflow-x: auto;
+                overflow-y: hidden;
+
+                padding: 12px 15px;
+                margin: 0;
+
+                gap: 8px;
+
+                white-space: nowrap;
+                scroll-behavior: smooth;
+
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+
+                touch-action: pan-x;
+            }
+
+            nav ul::-webkit-scrollbar {
+                display: none;
+            }
+
+            nav li {
+                flex: 0 0 auto;
+                display: block;
+            }
+
+            nav li a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+
+                min-height: 42px;
+                padding: 9px 14px;
+
+                white-space: nowrap;
+
+                position: relative;
+                z-index: 100;
+
+                pointer-events: auto;
+                cursor: pointer;
+
+                -webkit-tap-highlight-color: transparent;
+            }
+
+            /*
+             Prevent other elements from covering
+             the navigation.
+            */
+
+            header,
+            header * {
+                pointer-events: auto;
+            }
+
+
+            /* =================================================
+               SEARCH SECTION
+            ================================================= */
+
+            .search-section {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .search-section input,
+            .search-section select,
+            .search-section button {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+
+            /* =================================================
+               VEHICLE GRID
+            ================================================= */
+
+            .cars {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .car-card {
+                max-width: 100%;
+                box-sizing: border-box;
+            }
+
+            .car-card img {
+                max-width: 100%;
+                height: auto;
+                display: block;
+            }
+        }
+
+
+        /* =====================================================
+           EXTRA SMALL PHONES
+        ===================================================== */
+
+        @media (max-width: 480px) {
+
+            nav ul {
+                gap: 6px;
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            nav li a {
+                min-height: 40px;
+                padding: 8px 12px;
+                font-size: 13px;
+            }
+        }
+    </style>
 
 </head>
 
+
 <body>
+
 
 <header>
 
-<div class="logo">
+    <div class="logo">
 
-<img src="pictures/logo.png" alt="M.I Motor Sales">
+        <img src="pictures/logo.png" alt="M.I Motor Sales">
 
-<div>
+        <div>
+            <h1>M.I Car Sales</h1>
+            <p>Wishing You Many Miles With Smiles</p>
+        </div>
 
-<h1>M.I Car Sales</h1>
+    </div>
 
-<p>Wishing You Many Miles With Smiles</p>
 
-</div>
+    <!-- MOBILE SWIPE NAVIGATION -->
 
-</div>
+    <nav aria-label="Main navigation">
 
-<nav>
+        <ul>
 
-<ul>
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
 
-<li><a href="index.html">Home</a></li>
+            <li>
+                <a href="vehicles.html" class="active">
+                    Vehicles
+                </a>
+            </li>
 
-<li><a href="vehicles.html" class="active">Vehicles</a></li>
+            <li>
+                <a href="sellcar.html">
+                    Sell Your Car
+                </a>
+            </li>
 
-<li><a href="sellcar.html">Sell Your Car</a></li>
-<li><a href="crm.html" class="staff-crm-link">🔐 Staff CRM</a></li>
+            <li>
+                <a href="crm.html" class="staff-crm-link">
+                    🔐 Staff CRM
+                </a>
+            </li>
 
-<li><a href="location.html">Location</a></li>
+            <li>
+                <a href="location.html">
+                    Location
+                </a>
+            </li>
 
-<li><a href="index.html#about">About</a></li>
+            <li>
+                <a href="index.html#about">
+                    About
+                </a>
+            </li>
 
-<li><a href="index.html#contact">Contact</a></li>
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
 
-</ul>
+        </ul>
 
-</nav>
+    </nav>
 
 </header>
 
+
+
 <section class="page-title">
 
-<h1>Our Vehicles</h1>
+    <h1>Our Vehicles</h1>
 
-<p>Browse our quality pre-owned vehicles.</p>
+    <p>
+        Browse our quality pre-owned vehicles.
+    </p>
 
 </section>
+
+
 
 <section class="search-section">
 
-<input
-type="text"
-id="searchInput"
-placeholder="Search by Make or Model">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by Make or Model"
+    >
 
-<select id="makeFilter">
+    <select id="makeFilter">
 
-<option value="all">All Makes</option>
-<option value="bmw">BMW</option>
-<option value="nissan">Nissan</option>
-<option value="toyota">Toyota</option>
-<option value="volkswagen">Volkswagen</option>
-<option value="audi">Audi</option>
-<option value="mercedes-benz">Mercedes-Benz</option>
-<option value="ford">Ford</option>
-<option value="mazda">Mazda</option>
-<option value="hyundai">Hyundai</option>
-<option value="renault">Renault</option>
-<option value="mitsubishi">Mitsubishi</option>
-<option value="opel corsa">Opel Corsa</option>
-<option value="kia">Kia</option>
-<option value="suzuki">Suzuki</option>
-<option value="chrysler">Chrysler</option>
-<option value="chevrolet">Chevrolet</option>
+        <option value="all">All Makes</option>
 
-</select>
+        <option value="bmw">BMW</option>
+        <option value="nissan">Nissan</option>
+        <option value="toyota">Toyota</option>
+        <option value="volkswagen">Volkswagen</option>
+        <option value="audi">Audi</option>
+        <option value="mercedes-benz">Mercedes-Benz</option>
+        <option value="ford">Ford</option>
+        <option value="mazda">Mazda</option>
+        <option value="hyundai">Hyundai</option>
+        <option value="renault">Renault</option>
+        <option value="mitsubishi">Mitsubishi</option>
+        <option value="opel corsa">Opel Corsa</option>
+        <option value="kia">Kia</option>
+        <option value="suzuki">Suzuki</option>
+        <option value="chrysler">Chrysler</option>
+        <option value="chevrolet">Chevrolet</option>
 
-<select id="priceFilter">
+    </select>
 
-<option value="all">All Prices</option>
-<option value="below100">Below R100 000</option>
-<option value="100-200">R100 000 - R200 000</option>
-<option value="200-300">R200 000 - R300 000</option>
-<option value="above300">Above R300 000</option>
 
-</select>
+    <select id="priceFilter">
 
-<button onclick="searchCars()">Search</button>
+        <option value="all">
+            All Prices
+        </option>
+
+        <option value="below100">
+            Below R100 000
+        </option>
+
+        <option value="100-200">
+            R100 000 - R200 000
+        </option>
+
+        <option value="200-300">
+            R200 000 - R300 000
+        </option>
+
+        <option value="above300">
+            Above R300 000
+        </option>
+
+    </select>
+
+
+    <button type="button" onclick="searchCars()">
+        Search
+    </button>
 
 </section>
+
+
 
 <section class="cars">
 
+
 <!-- BMW -->
 
-<div class="car-card"
+<div class="car-card" data-make="bmw" data-price="109900">
 
-data-make="bmw"
+    <img src="pictures/cars/bwm 3 series.jpeg" alt="BMW E90 320i">
 
-data-price="109900">
+    <h3>BMW E90 320i iDrive Spec</h3>
 
-<img src="pictures/cars/bwm 3 series.jpeg">
+    <p class="price">R109 900</p>
 
-<h3>BMW E90 320i iDrive Spec</h3>
+    <p>2010 • Automatic • Petrol</p>
 
-<p class="price">R109 900</p>
+    <p>192 451 km</p>
 
-<p>2010 • Automatic • Petrol</p>
-
-<p>192 451 km</p>
-
-<a href="bmw320i.html" class="details-btn">View Details</a>
+    <a href="bmw320i.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
 
 <!-- Nissan -->
 
-<div class="car-card"
+<div class="car-card" data-make="nissan" data-price="109900">
 
-data-make="nissan"
+    <img src="pictures/cars/nissan.jpeg" alt="Nissan X-Trail">
 
-data-price="109900">
+    <h3>Nissan X-Trail 2.0</h3>
 
-<img src="pictures/cars/nissan.jpeg">
+    <p class="price">PENDING!!!</p>
 
-<h3>Nissan X-Trail 2.0</h3>
+    <p>2013 • Manual • Petrol</p>
 
-<p class="price">PENDING!!!</p>
+    <p>166 197 km</p>
 
-<p>2013 • Manual • Petrol</p>
-
-<p>166 197 km</p>
-
-<a href="xtrail.html" class="details-btn">View Details</a>
+    <a href="xtrail.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="toyota"
-
-data-price="129900">
-
-<img src="pictures/cars/toyota quest.jpeg" alt="Toyota Corolla Quest">
-
-<h3>Toyota Corolla Quest 1.6 Plus</h3>
-
-<p class="price">R129 900</p>
-
-<p>2018 • Manual • Petrol</p>
-
-<p>167 330 km</p>
-
-<a href="toyotaquest.html" class="details-btn">
-
-View Details
-
-</a>
-
-</div>
 
 <!-- Toyota -->
 
-<div class="car-card"
+<div class="car-card" data-make="toyota" data-price="129900">
 
-data-make="toyota"
+    <img src="pictures/cars/toyota quest.jpeg" alt="Toyota Corolla Quest">
 
-data-price="119900">
+    <h3>Toyota Corolla Quest 1.6 Plus</h3>
 
-<img src="pictures/cars/versomain.jpeg" alt="Toyota Corolla Quest">
+    <p class="price">R129 900</p>
 
-<h3>Toyota Corolla Verso 1.8 7 Seater</h3>
+    <p>2018 • Manual • Petrol</p>
 
-<p class="price">R119 900</p>
+    <p>167 330 km</p>
 
-<p>2007 • Manual • Petrol</p>
-
-<p>227 526 km</p>
-
-<a href="verso.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="toyotaquest.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
+
+<div class="car-card" data-make="toyota" data-price="119900">
+
+    <img src="pictures/cars/versomain.jpeg" alt="Toyota Corolla Verso">
+
+    <h3>Toyota Corolla Verso 1.8 7 Seater</h3>
+
+    <p class="price">R119 900</p>
+
+    <p>2007 • Manual • Petrol</p>
+
+    <p>227 526 km</p>
+
+    <a href="verso.html" class="details-btn">
+        View Details
+    </a>
+
+</div>
+
+
 
 <!-- Volkswagen -->
 
-<div class="car-card"
+<div class="car-card" data-make="volkswagen" data-price="129900">
 
-data-make="volkswagen"
+    <img src="pictures/cars/vw tiguan.jpeg" alt="Volkswagen Tiguan">
 
-data-price="129900">
+    <h3>Volkswagen Tiguan 1.4 TSI</h3>
 
-<img src="pictures/cars/vw tiguan.jpeg" alt="Volkswagen Tiguan">
+    <p class="price">R129 900</p>
 
-<h3>Volkswagen Tiguan 1.4 TSI</h3>
+    <p>2016 • Manual • Petrol</p>
 
-<p class="price">R129 900</p>
+    <p>239 585 km</p>
 
-<p>2016 • Manual • Petrol</p>
-
-<p>239 585 km</p>
-
-<a href="tiguan.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="tiguan.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
 
 <!-- Mazda -->
 
-<div class="car-card"
+<div class="car-card" data-make="mazda" data-price="79900">
 
-data-make="mazda"
+    <img src="pictures/cars/mazda31.jpeg" alt="Mazda 3">
 
-data-price="79900">
+    <h3>Mazda 3</h3>
 
-<img src="pictures/cars/mazda31.jpeg" alt="Mazda 3">
+    <p class="price">R79 900</p>
 
-<h3>Mazda 3</h3>
+    <p>2005 • Manual • Petrol</p>
 
-<p class="price">R79 900</p>
+    <p>162 868 km</p>
 
-<p>2005 • Manual • Petrol</p>
-
-<p>162 868 km</p>
-
-<a href="mazda3.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="mazda3.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
 
 <!-- Volkswagen -->
 
-<div class="car-card"
+<div class="car-card" data-make="volkswagen" data-price="89900">
 
-data-make="Volkswagen"
+    <img src="pictures/cars/vwpolomain2.jpeg" alt="Volkswagen Polo Vivo">
 
-data-price="89900">
+    <h3>Vw Polo Vivo</h3>
 
-<img src="pictures/cars/vwpolomain2.jpeg" alt="Mazda 3">
+    <p class="price">R89 900</p>
 
-<h3>Vw Polo Vivo</h3>
+    <p>2010 • Manual • Petrol</p>
 
-<p class="price">R89 900</p>
+    <p>143 734 km</p>
 
-<p>2010 • Manual • Petrol</p>
-
-<p>143 734 km</p>
-
-<a href="polovivo2.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="polovivo2.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Volkswagen -->
 
-<div class="car-card"
 
-data-make="Volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="99900">
 
-data-price="99900">
+    <img src="pictures/cars/vwpolomain.jpeg" alt="Volkswagen Polo Vivo">
 
-<img src="pictures/cars/vwpolomain.jpeg" alt="Mazda 3">
+    <h3>Vw Polo Vivo</h3>
 
-<h3>Vw Polo Vivo</h3>
+    <p class="price">R99 900</p>
 
-<p class="price">R99 900</p>
+    <p>2010 • Manual • Petrol</p>
 
-<p>2010 • Manual • Petrol</p>
+    <p>174 994 km</p>
 
-<p>174 994 km</p>
-
-<a href="polovivo.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="polovivo.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
 
 <!-- Nissan -->
 
-<div class="car-card"
+<div class="car-card" data-make="nissan" data-price="129900">
 
-data-make="Nissan"
+    <img src="pictures/cars/nissanq main.jpeg" alt="Nissan Qashqai">
 
-data-price="129900">
+    <h3>Nissan Qashqai 2.0 Acenta CVT</h3>
 
-<img src="pictures/cars/nissanq main.jpeg" alt="Mazda 3">
+    <p class="price">R129 900</p>
 
-<h3>Nissan Qashqai 2.0 Acenta CVT</h3>
+    <p>2014 • Automatic • Petrol</p>
 
-<p class="price">R129 900</p>
+    <p>220 069 km</p>
 
-<p>2014 • Automatic • Petrol</p>
-
-<p>220 069 km</p>
-
-<a href="nissanq.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="nissanq.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
 
 <!-- Hyundai -->
 
-<div class="car-card"
+<div class="car-card" data-make="hyundai" data-price="109900">
 
-data-make="Hyundai"
+    <img src="pictures/cars/hyundaimain.jpeg" alt="Hyundai Accent">
 
-data-price="109900">
+    <h3>Hyundai Accent</h3>
 
-<img src="pictures/cars/hyundaimain.jpeg" alt="Mazda 3">
+    <p class="price">R109 900</p>
 
-<h3>Hyundai Accent</h3>
+    <p>2013 • Automatic • Petrol</p>
 
-<p class="price">R109 900</p>
+    <p>237 075 km</p>
 
-<p>2013 • Automatic • Petrol</p>
-
-<p>237 075 km</p>
-
-<a href="hyundaia.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="hyundaia.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
 
 <!-- Renault -->
 
-<div class="car-card"
+<div class="car-card" data-make="renault" data-price="119900">
 
-data-make="Renault"
+    <img src="pictures/cars/renaultkmain.jpeg" alt="Renault Kwid">
 
-data-price="119900">
+    <h3>Renault Kwid 1.0</h3>
 
-<img src="pictures/cars/renaultkmain.jpeg" alt="renault">
+    <p class="price">R119 900</p>
 
-<h3>Renault Kwid 1.0</h3>
+    <p>2026 • Manual • Petrol</p>
 
-<p class="price">R119 900</p>
+    <p>12 066 km</p>
 
-<p>2026 • Manual • Petrol</p>
-
-<p>12 066 km</p>
-
-<a href="Renaultk.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="Renaultk.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
+
+
 
 <!-- Toyota -->
 
-<div class="car-card"
+<div class="car-card" data-make="toyota" data-price="375000">
 
-data-make="Toyota"
+    <img src="pictures/cars/quantammain.jpeg" alt="Toyota Quantum">
 
-data-price="375000">
+    <h3>Toyota Quantum/haice 2.5D-4d Sesfikile 16S</h3>
 
-<img src="pictures/cars/quantammain.jpeg" alt="Mazda 3">
+    <p class="price">R375 000</p>
 
-<h3>Toyota Quantum/haice 2.5D-4d Sesfikile 16S</h3>
+    <p>2021 • Manual • Petrol</p>
 
-<p class="price">R375 000</p>
+    <p>15 537 km</p>
 
-<p>2021 • Manual • Petrol</p>
-
-<p>15 537 km</p>
-
-<a href="quantum.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="quantum.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="Toyota"
+<div class="car-card" data-make="toyota" data-price="159900">
 
-data-price="159900">
+    <img src="pictures/cars/prestigemain.jpeg" alt="Toyota Corolla">
 
-<img src="pictures/cars/prestigemain.jpeg" alt="Mazda 3">
+    <h3>Toyota Corolla Prestige 1.6</h3>
 
-<h3>Toyota Corolla Prestige 1.6</h3>
+    <p class="price">R159 900</p>
 
-<p class="price">R159 900</p>
+    <p>2014 • Manual • Petrol</p>
 
-<p>2014 • Manual • Petrol</p>
+    <p>224 278 km</p>
 
-<p>224 278 km</p>
-
-<a href="Toyotap1.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="Toyotap1.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="Toyota"
+<div class="car-card" data-make="toyota" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/hiluxmain.jpeg" alt="Toyota Hilux">
 
-<img src="pictures/cars/hiluxmain.jpeg" alt="Mazda 3">
+    <h3>Toyota Hilux 2.5d-4d</h3>
 
-<h3>Toyota Hilux 2.5d-4d</h3>
+    <p class="price">R149 900</p>
 
-<p class="price">R149 900</p>
+    <p>2013 • Manual • Diesel</p>
 
-<p>2013 • Manual • Diesel</p>
+    <p>222 131 km</p>
 
-<p>222 131 km</p>
-
-<a href="hilux.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="hilux.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="Toyota"
+<div class="car-card" data-make="toyota" data-price="69000">
 
-data-price="69000">
+    <img src="pictures/cars/tazzmain.jpeg" alt="Toyota Tazz">
 
-<img src="pictures/cars/tazzmain.jpeg" alt="Mazda 3">
+    <h3>Toyota Tazz 1.3 AC/SPEC</h3>
 
-<h3>Toyota Tazz 1.3 AC/SPEC</h3>
+    <p class="price">R69 900</p>
 
-<p class="price">R69 900</p>
+    <p>2005 • Manual • Petrol</p>
 
-<p>2005 • Manual • Petrol</p>
+    <p>311 908 km</p>
 
-<p>311 908 km</p>
-
-<a href="toyotatazz.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="toyotatazz.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Volkswagen -->
 
-<div class="car-card"
 
-data-make="Volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="99900">
 
-data-price="99900">
+    <img src="pictures/cars/tiguan2main.jpeg" alt="Volkswagen Tiguan">
 
-<img src="pictures/cars/tiguan2main.jpeg" alt="Mazda 3">
+    <h3>Vw Tiguan 1.4 TSI</h3>
 
-<h3>Vw Tiguan 1.4 TSI</h3>
+    <p class="price">R99 900</p>
 
-<p class="price">R99 900</p>
+    <p>2012 • Manual • Petrol</p>
 
-<p>2012 • Manual • Petrol</p>
+    <p>226 800 km</p>
 
-<p>226 800 km</p>
-
-<a href="vwtiguan.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="vwtiguan.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="Toyota"
+<div class="car-card" data-make="toyota" data-price="159900">
 
-data-price="159900">
+    <img src="pictures/cars/prestige2main.jpeg" alt="Toyota Corolla">
 
-<img src="pictures/cars/prestige2main.jpeg" alt="Mazda 3">
+    <h3>Toyota Corolla Prestige 1.6</h3>
 
-<h3>Toyota Corolla Prestige 1.6</h3>
+    <p class="price">R159 900</p>
 
-<p class="price">R159 900</p>
+    <p>2016 • Automatic • Petrol</p>
 
-<p>2016 • Automatic • Petrol</p>
+    <p>189 186 km</p>
 
-<p>189 186 km</p>
-
-<a href="toyotap2.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="toyotap2.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="Hyundai"
+<div class="car-card" data-make="hyundai" data-price="139900">
 
-data-price="139900">
+    <img src="pictures/cars/ix35main.jpeg" alt="Hyundai ix35">
 
-<img src="pictures/cars/ix35main.jpeg" alt="Mazda 3">
+    <h3>Hyundai Ix35 2.0 Gls/Executive</h3>
 
-<h3>Hyundai Ix35 2.0 Gls/Executive</h3>
+    <p class="price">R139 900</p>
 
-<p class="price">R139 900</p>
+    <p>2012 • Automatic • Petrol</p>
 
-<p>2012 • Automatic • Petrol</p>
+    <p>137 523 km</p>
 
-<p>137 523 km</p>
-
-<a href="hyundaiix35.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="hyundaiix35.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="Hyundai"
+<div class="car-card" data-make="hyundai" data-price="139900">
 
-data-price="139900">
+    <img src="pictures/cars/hyundaii20main.jpeg" alt="Hyundai i20">
 
-<img src="pictures/cars/hyundaii20main.jpeg" alt="i20">
+    <h3>Hyundai i20 1.6</h3>
 
-<h3>Hyundai i20 1.6</h3>
+    <p class="price">SOLD</p>
 
-<p class="price">SOLD</p>
+    <p>2011 • Manual • Petrol</p>
 
-<p>2011 • Manual • Petrol</p>
+    <p>161 197 km</p>
 
-<p>161 197 km</p>
-
-<a href="hyundaii20.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="hyundaii20.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Volkswagen -->
 
-<div class="car-card"
 
-data-make="Volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="139900">
 
-data-price="139900">
+    <img src="pictures/cars/pologtimain.jpeg" alt="Volkswagen Polo GTI">
 
-<img src="pictures/cars/pologtimain.jpeg" alt="polo">
+    <h3>Vw Polo GTI 1.4tsi DSG</h3>
 
-<h3>Vw Polo GTI 1.4tsi DSG</h3>
+    <p class="price">R139 900</p>
 
-<p class="price">R139 900</p>
+    <p>2013 • Automatic • Petrol</p>
 
-<p>2013 • Automatic • Petrol</p>
+    <p>202 912 km</p>
 
-<p>202 912 km</p>
-
-<a href="pologti.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="pologti.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Ford -->
 
-<div class="car-card"
 
-data-make="Ford"
+<div class="car-card" data-make="ford" data-price="129900">
 
-data-price="129900">
+    <img src="pictures/cars/kugamain.jpeg" alt="Ford Kuga">
 
-<img src="pictures/cars/kugamain.jpeg" alt="kuga">
+    <h3>Ford Kuga 1.5 EcoBoost Ambiente</h3>
 
-<h3>Ford Kuga 1.5 EcoBoost Ambiente</h3>
+    <p class="price">R129 900</p>
 
-<p class="price">R129 900</p>
+    <p>2015 • Automatic • Petrol</p>
 
-<p>2015 • Automatic • Petrol</p>
+    <p>206 267 km</p>
 
-<p>206 267 km</p>
-
-<a href="kuga.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="kuga.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Ford -->
 
-<div class="car-card"
 
-data-make="Ford"
+<div class="car-card" data-make="ford" data-price="119900">
 
-data-price="119900">
+    <img src="pictures/cars/figomain.jpeg" alt="Ford Figo">
 
-<img src="pictures/cars/figomain.jpeg" alt="kuga">
+    <h3>Ford Figo 1.5</h3>
 
-<h3>Ford figo 1.5</h3>
+    <p class="price">R119 900</p>
 
-<p class="price">R119 900</p>
+    <p>2018 • Manual • Petrol</p>
 
-<p>2018 • Manual • Petrol</p>
+    <p>142 465 km</p>
 
-<p>142 465 km</p>
-
-<a href="figo.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="figo.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Mitsubishi -->
 
-<div class="car-card"
 
-data-make="Mitsubishi"
+<div class="car-card" data-make="mitsubishi" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/mitsubishmain.jpeg" alt="Mitsubishi">
 
-<img src="pictures/cars/mitsubishmain.jpeg" alt="Mitsubishi">
+    <h3>Mitsubishi Triton 2.5 Diesel</h3>
 
-<h3>Mitsubishi Triton 2.5 Diesel</h3>
+    <p class="price">R149 900</p>
 
-<p class="price">R149 900</p>
+    <p>2014 • Manual • Diesel</p>
 
-<p>2014 • Manual • Diesel</p>
+    <p>137 523 km</p>
 
-<p>137 523 km</p>
-
-<a href="mitsubishi.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="mitsubishi.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Totota -->
 
-<div class="car-card"
 
-data-make="Toyota"
+<div class="car-card" data-make="toyota" data-price="239900">
 
-data-price="239900">
+    <img src="pictures/cars/fortunermain.jpeg" alt="Toyota Fortuner">
 
-<img src="pictures/cars/fortunermain.jpeg" alt="Mazda 3">
+    <h3>Toyota Fortuner 3.0d-4d 4x4</h3>
 
-<h3>Toyota Fortuner 3.0d-4d 4x4</h3>
+    <p class="price">R239 900</p>
 
-<p class="price">R239 900</p>
+    <p>2011 • Manual • Diesel</p>
 
-<p>2011 • Manual • Diesel</p>
+    <p>164 617 km</p>
 
-<p>164 617 km</p>
-
-<a href="fortuner.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="fortuner.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="Hyundai"
+<div class="car-card" data-make="hyundai" data-price="119900">
 
-data-price="119900">
+    <img src="pictures/cars/i1202main.jpeg" alt="Hyundai i20">
 
-<img src="pictures/cars/i1202main.jpeg" alt="Mazda 3">
+    <h3>Hyundai i20 1.2</h3>
 
-<h3>Hyundai i20 1.2</h3>
+    <p class="price">R119 900</p>
 
-<p class="price">R119 900</p>
+    <p>2016 • Manual • Petrol</p>
 
-<p>2016 • Manual • Petrol</p>
+    <p>213 338 km</p>
 
-<p>213 338 km</p>
-
-<a href="i202.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="i202.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Opel Corsa -->
 
-<div class="car-card"
 
-data-make="Opel Corsa"
+<div class="car-card" data-make="opel corsa" data-price="139900">
 
-data-price="139900">
+    <img src="pictures/cars/pikupmain.jpeg" alt="Opel Corsa Pick-Up">
 
-<img src="pictures/cars/pikupmain.jpeg" alt="Mazda 3">
+    <h3>Opel Corsa Pick-Up 1.4</h3>
 
-<h3>Opel Corsa Pick-Up 1.4</h3>
+    <p class="price">R139 900</p>
 
-<p class="price">R139 900</p>
+    <p>2007 • Manual • Petrol</p>
 
-<p>2007 • Manual • Petrol</p>
+    <p>437 553 km</p>
 
-<p>437 553 km</p>
-
-<a href="pickup.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="pickup.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="Hyundai"
+<div class="car-card" data-make="hyundai" data-price="249900">
 
-data-price="249900">
+    <img src="pictures/cars/h1main.jpeg" alt="Hyundai H1">
 
-<img src="pictures/cars/h1main.jpeg" alt="Mazda 3">
+    <h3>Hyundai H1 2.5 Diesel</h3>
 
-<h3>Hyundai H1 2.5 Diesel</h3>
+    <p class="price">R249 900</p>
 
-<p class="price">R249 900</p>
+    <p>2016 • Automatic • Diesel</p>
 
-<p>2016 • Automatic • Diesel</p>
+    <p>117 987 km</p>
 
-<p>117 987 km</p>
-
-<a href="h1.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="h1.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Renault -->
 
-<div class="car-card"
 
-data-make="Renault"
+<div class="car-card" data-make="renault" data-price="89900">
 
-data-price="89900">
+    <img src="pictures/cars/koleosmain.jpeg" alt="Renault Koleos">
 
-<img src="pictures/cars/koleosmain.jpeg" alt="Mazda 3">
+    <h3>Renault Koleos 4x4 2.5</h3>
 
-<h3>Renault Koleos 4x4 2.5</h3>
+    <p class="price">R89 900</p>
 
-<p class="price">R89 900</p>
+    <p>2010 • Automatic • Petrol</p>
 
-<p>2010 • Automatic • Petrol</p>
+    <p>152 792 km</p>
 
-<p>152 792 km</p>
-
-<a href="koleos.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="koleos.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Kia -->
 
-<div class="car-card"
 
-data-make="Kia"
+<div class="car-card" data-make="kia" data-price="109900">
 
-data-price="109900">
+    <img src="pictures/cars/ceratomain.jpeg" alt="Kia Cerato">
 
-<img src="pictures/cars/ceratomain.jpeg" alt="Mazda 3">
+    <h3>Kia Cerato 1.6</h3>
 
-<h3>Kia Cerato 1.6</h3>
+    <p class="price">R109 900</p>
 
-<p class="price">R109 900</p>
+    <p>2013 • Manual • Petrol</p>
 
-<p>2013 • Manual • Petrol</p>
+    <p>207 651 km</p>
 
-<p>207 651 km</p>
-
-<a href="cerato.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="cerato.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="Toyota"
+<div class="car-card" data-make="toyota" data-price="99000">
 
-data-price="99000">
+    <img src="pictures/cars/corollapmain.jpeg" alt="Toyota Corolla">
 
-<img src="pictures/cars/corollapmain.jpeg" alt="corolla">
+    <h3>Toyota Corolla Professional 1.6</h3>
 
-<h3>Toyota Corolla Professional 1.6</h3>
+    <p class="price">R99 900</p>
 
-<p class="price">R99 900</p>
+    <p>2012 • Manual • Petrol</p>
 
-<p>2012 • Manual • Petrol</p>
+    <p>264 659 km</p>
 
-<p>264 659 km</p>
-
-<a href="corollap.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="corollap.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Nissan -->
 
-<div class="car-card"
 
-data-make="Nissan"
+<div class="car-card" data-make="nissan" data-price="119900">
 
-data-price="119900">
+    <img src="pictures/cars/qashqaimain.jpeg" alt="Nissan Qashqai">
 
-<img src="pictures/cars/qashqaimain.jpeg" alt="Mazda 3">
+    <h3>Nissan Qashqai 2.0</h3>
 
-<h3>Nissan Qashqai 2.0</h3>
+    <p class="price">R119 900</p>
 
-<p class="price">R119 900</p>
+    <p>2011 • Manual • Petrol</p>
 
-<p>2011 • Manual • Petrol</p>
+    <p>175 075 km</p>
 
-<p>175 075 km</p>
-
-<a href="qashqai.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="qashqai.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Nissan -->
 
-<div class="car-card"
 
-data-make="Nissan"
+<div class="car-card" data-make="nissan" data-price="99900">
 
-data-price="99900">
+    <img src="pictures/cars/nissanlmain.jpeg" alt="Nissan Livina">
 
-<img src="pictures/cars/nissanlmain.jpeg" alt="Mazda 3">
+    <h3>Nissan Livina 1.6 7 Seater</h3>
 
-<h3>Nissan Livina 1.6 7 Seater</h3>
+    <p class="price">R99 900</p>
 
-<p class="price">R99 900</p>
+    <p>2008 • Manual • Petrol</p>
 
-<p>2008 • Manual • Petrol</p>
+    <p>215 620 km</p>
 
-<p>215 620 km</p>
-
-<a href="nissanl.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="nissanl.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- volkswagen -->
 
-<div class="car-card"
 
-data-make="volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="99000">
 
-data-price="99000">
+    <img src="pictures/cars/polotmain.jpeg" alt="Volkswagen Polo">
 
-<img src="pictures/cars/polotmain.jpeg" alt="polo">
+    <h3>Vw Polo 6 1.4</h3>
 
-<h3>Vw Polo 6 1.4</h3>
+    <p class="price">R99 900</p>
 
-<p class="price">R99 900</p>
+    <p>2011 • Manual • Petrol</p>
 
-<p>2011 • Manual • Petrol</p>
+    <p>205 537 km</p>
 
-<p>205 537 km</p>
-
-<a href="polot.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="polot.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- volkswagen -->
 
-<div class="car-card"
 
-data-make="volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="149000">
 
-data-price="149000">
+    <img src="pictures/cars/polotsimain.jpeg" alt="Volkswagen Polo TSI">
 
-<img src="pictures/cars/polotsimain.jpeg" alt="polo">
+    <h3>Vw Polo TSI 1.2</h3>
 
-<h3>Vw Polo TSI 1.2</h3>
+    <p class="price">R149 900</p>
 
-<p class="price">R149 900</p>
+    <p>2017 • Manual • Petrol</p>
 
-<p>2017 • Manual • Petrol</p>
+    <p>156 887 km</p>
 
-<p>156 887 km</p>
-
-<a href="polotsi.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="polotsi.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- volkswagen -->
 
-<div class="car-card"
 
-data-make="volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="169000">
 
-data-price="169000">
+    <img src="pictures/cars/polo8main.jpeg" alt="Volkswagen Polo 8">
 
-<img src="pictures/cars/polo8main.jpeg" alt="polo">
+    <h3>Vw Polo 8 TSI</h3>
 
-<h3>Vw Polo 8 TSI</h3>
+    <p class="price">R169 900</p>
 
-<p class="price">R169 900</p>
+    <p>2021 • Manual • Petrol</p>
 
-<p>2021 • Manual • Petrol</p>
+    <p>253 619 km</p>
 
-<p>253 619 km</p>
-
-<a href="polo8.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="polo8.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="Hyundai"
+<div class="car-card" data-make="hyundai" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/elantramain.jpeg" alt="Hyundai Elantra">
 
-<img src="pictures/cars/elantramain.jpeg" alt="Elantra">
+    <h3>Hyundai Elantra 1.6</h3>
 
-<h3>Hyundai Elantra 1.6</h3>
+    <p class="price">R149 900</p>
 
-<p class="price">R149 900</p>
+    <p>2018 • Manual • Petrol</p>
 
-<p>2018 • Manual • Petrol</p>
+    <p>209 483 km</p>
 
-<p>209 483 km</p>
-
-<a href="elantra.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="elantra.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Suzuki -->
 
-<div class="car-card"
 
-data-make="suzuki"
+<div class="car-card" data-make="suzuki" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/swiftmain.jpeg" alt="Suzuki Swift">
 
-<img src="pictures/cars/swiftmain.jpeg" alt="Mazda 3">
+    <h3>Suzuki Swift 1.2</h3>
 
-<h3>Suzuki Swift 1.2</h3>
+    <p class="price">R149 900</p>
 
-<p class="price">R149 900</p>
+    <p>2023 • Manual • Petrol</p>
 
-<p>2023 • Manaul • Petrol</p>
+    <p>103 484 km</p>
 
-<p>103 484 km</p>
-
-<a href="swift.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="swift.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Chrysler -->
 
-<div class="car-card"
 
-data-make="Chrysler"
+<div class="car-card" data-make="chrysler" data-price="89900">
 
-data-price="89900">
+    <img src="pictures/cars/chryslermain.jpeg" alt="Chrysler">
 
-<img src="pictures/cars/chryslermain.jpeg" alt="Mazda 3">
+    <h3>Chrysler Grand Voyager 2.8</h3>
 
-<h3>Chrysler Grand Voyager 2.8</h3>
+    <p class="price">R89 900</p>
 
-<p class="price">R89 900</p>
+    <p>2023 • Automatic • Diesel</p>
 
-<p>2023 • Automatic • Diesel</p>
+    <p>134 051 km</p>
 
-<p>134 051 km</p>
-
-<a href="chrysler.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="chrysler.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="Toyota"
+<div class="car-card" data-make="toyota" data-price="59900">
 
-data-price="59900">
+    <img src="pictures/cars/kfcmain.jpeg" alt="Toyota Corolla">
 
-<img src="pictures/cars/kfcmain.jpeg" alt="Mazda 3">
+    <h3>Toyota Corolla 1.6 Carburetor</h3>
 
-<h3>Toyota Corolla 1.6 Carburetor</h3>
+    <p class="price">R59 900</p>
 
-<p class="price">R59 900</p>
+    <p>1992 • Manual • Petrol</p>
 
-<p>1992 • Manual • Petrol</p>
+    <p>189 000 km</p>
 
-<p>189 000 km</p>
-
-<a href="kfc.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="kfc.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Mazda -->
 
-<div class="car-card"
 
-data-make="mazda"
+<div class="car-card" data-make="mazda" data-price="79900">
 
-data-price="79900">
+    <img src="pictures/cars/mazda2main.jpeg" alt="Mazda 2">
 
-<img src="pictures/cars/mazda2main.jpeg" alt="Mazda 3">
+    <h3>Mazda 2 1.5</h3>
 
-<h3>Mazda 2 1.5</h3>
+    <p class="price">R79 900</p>
 
-<p class="price">R79 900</p>
+    <p>2009 • Manual • Petrol</p>
 
-<p>2009 • Manual • Petrol</p>
+    <p>199 143 km</p>
 
-<p>199 143 km</p>
-
-<a href="mazda2.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="mazda2.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Chevrolet -->
 
-<div class="car-card"
 
-data-make="Chevrolet"
+<div class="car-card" data-make="chevrolet" data-price="69900">
 
-data-price="69900">
+    <img src="pictures/cars/chevmain.jpeg" alt="Chevrolet Aveo">
 
-<img src="pictures/cars/chevmain.jpeg" alt="Mazda 3">
+    <h3>Chevrolet Aveo 1.5</h3>
 
-<h3>Chevrolet Aveo 1.5</h3>
+    <p class="price">R69 900</p>
 
-<p class="price">R69 900</p>
+    <p>2011 • Manual • Petrol</p>
 
-<p>2011 • Manual • Petrol</p>
+    <p>140 092 km</p>
 
-<p>140 092 km</p>
-
-<a href="chevrolet.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="chevrolet.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Ford -->
 
-<div class="car-card"
 
-data-make="ford"
+<div class="car-card" data-make="ford" data-price="89900">
 
-data-price="89900">
+    <img src="pictures/cars/fiestamain.jpeg" alt="Ford Fiesta">
 
-<img src="pictures/cars/fiestamain.jpeg" alt="Mazda 3">
+    <h3>Ford Fiesta 1.4</h3>
 
-<h3>Ford Fiesta 1.4</h3>
+    <p class="price">R89 900</p>
 
-<p class="price">R89 900</p>
+    <p>2011 • Manual • Petrol</p>
 
-<p>2011 • Manual • Petrol</p>
+    <p>167 997 km</p>
 
-<p>167 997km</p>
-
-<a href="fiesta.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="fiesta.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Volkswagen -->
 
-<div class="car-card"
 
-data-make="volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="159900">
 
-data-price="159900">
+    <img src="pictures/cars/vwpolo8main.jpeg" alt="Volkswagen Polo 8">
 
-<img src="pictures/cars/vwpolo8main.jpeg" alt="Mazda 3">
+    <h3>Vw Polo 8 TSI 1.0</h3>
 
-<h3>Vw Polo 8 TSI 1.0</h3>
+    <p class="price">R159 900</p>
 
-<p class="price">R159 900</p>
+    <p>2019 • Manual • Petrol</p>
 
-<p>2019 • Manual • Petrol</p>
+    <p>221 740 km</p>
 
-<p>221 740 km</p>
-
-<a href="vwpolo8.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="vwpolo8.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Toyota -->
 
-<div class="car-card"
 
-data-make="toyota"
+<div class="car-card" data-make="toyota" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/toyotapmain.jpeg" alt="Toyota Corolla">
 
-<img src="pictures/cars/toyotapmain.jpeg" alt="Mazda 3">
+    <h3>Toyota Corolla Prestige 1.6</h3>
 
-<h3>Toyota Corolla prestige 1.6</h3>
+    <p class="price">R149 900</p>
 
-<p class="price">R149 900</p>
+    <p>2015 • Manual • Petrol</p>
 
-<p>2015 • Manual • Petrol</p>
+    <p>224 271 km</p>
 
-<p>224 271 km</p>
-
-<a href="toyotap3.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="toyotap3.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Kia -->
 
-<div class="car-card"
 
-data-make="kia"
+<div class="car-card" data-make="kia" data-price="99900">
 
-data-price="99900">
+    <img src="pictures/cars/riomain.jpeg" alt="Kia Rio">
 
-<img src="pictures/cars/riomain.jpeg" alt="Mazda 3">
+    <h3>Kia Rio 1.4</h3>
 
-<h3>Kia Rio 1.4</h3>
+    <p class="price">SOLD</p>
 
-<p class="price">SOLD</p>
+    <p>2012 • Manual • Petrol</p>
 
-<p>2012 • Manual • Petrol</p>
+    <p>216 790 km</p>
 
-<p>216 790 km</p>
-
-<a href="rio.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="rio.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Renault -->
 
-<div class="car-card"
 
-data-make="renault"
+<div class="car-card" data-make="renault" data-price="74500">
 
-data-price="74500">
+    <img src="pictures/cars/sanderomain.jpeg" alt="Renault Sandero">
 
-<img src="pictures/cars/sanderomain.jpeg" alt="Mazda 3">
+    <h3>Renault Sandero 1.6</h3>
 
-<h3>Renault Sandero 1.6</h3>
+    <p class="price">R74 500</p>
 
-<p class="price">R74 500</p>
+    <p>2011 • Manual • Petrol</p>
 
-<p>2011 • Manual • Petrol</p>
+    <p>194 929 km</p>
 
-<p>194 929 km</p>
-
-<a href="sandero.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="sandero.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Kia -->
 
-<div class="car-card"
 
-data-make="kia"
+<div class="car-card" data-make="kia" data-price="69900">
 
-data-price="69900">
+    <img src="pictures/cars/cerato2main.jpeg" alt="Kia Cerato">
 
-<img src="pictures/cars/cerato2main.jpeg" alt="Mazda 3">
+    <h3>Kia Cerato 2.0 Sedan</h3>
 
-<h3>Kia Cerato 2.0 Sedan</h3>
+    <p class="price">R69 900</p>
 
-<p class="price">R69 900</p>
+    <p>2009 • Manual • Petrol</p>
 
-<p>2009 • Manual • Petrol</p>
+    <p>211 673 km</p>
 
-<p>211 673 km</p>
-
-<a href="cerato2.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="cerato2.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Opel Corsa -->
 
-<div class="car-card"
 
-data-make="opel corsa"
+<div class="car-card" data-make="opel corsa" data-price="79900">
 
-data-price="79900">
+    <img src="pictures/cars/astramain.jpeg" alt="Opel Astra">
 
-<img src="pictures/cars/astramain.jpeg" alt="Mazda 3">
+    <h3>Opel Astra 1.8</h3>
 
-<h3>Opel Astra 1.8</h3>
+    <p class="price">SOLD</p>
 
-<p class="price">SOLD</p>
+    <p>2005 • Automatic • Petrol</p>
 
-<p>2005 • Automatic • Petrol</p>
+    <p>152 701 km</p>
 
-<p>152 701 km</p>
-
-<a href="astra.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="astra.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="hyundai"
+<div class="car-card" data-make="hyundai" data-price="169900">
 
-data-price="169900">
+    <img src="pictures/cars/cretamain.jpeg" alt="Hyundai Creta">
 
-<img src="pictures/cars/cretamain.jpeg" alt="Mazda 3">
+    <h3>Hyundai Creta 1.6</h3>
 
-<h3>Hyundai Creta 1.6</h3>
+    <p class="price">R169 900</p>
 
-<p class="price">R169 900</p>
+    <p>2017 • Automatic • Petrol</p>
 
-<p>2017 • Automatic • Petrol</p>
+    <p>179 467 km</p>
 
-<p>179 467 km</p>
-
-<a href="creta.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="creta.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Suzuki -->
 
-<div class="car-card"
 
-data-make="suzuki"
+<div class="car-card" data-make="suzuki" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/dziremain.jpeg" alt="Suzuki Dzire">
 
-<img src="pictures/cars/dziremain.jpeg" alt="Mazda 3">
+    <h3>Suzuki Dzire 1.2</h3>
 
-<h3>Suzuki Dzire 1.2</h3>
+    <p class="price">SOLD</p>
 
-<p class="price">SOLD</p>
+    <p>2023 • Manual • Petrol</p>
 
-<p>2023 • Manual • Petrol</p>
+    <p>155 981 km</p>
 
-<p>155 981 km</p>
-
-<a href="dzire.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="dzire.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="hyundai"
+<div class="car-card" data-make="hyundai" data-price="89900">
 
-data-price="89900">
+    <img src="pictures/cars/hi20main.jpeg" alt="Hyundai i20">
 
-<img src="pictures/cars/hi20main.jpeg" alt="Mazda 3">
+    <h3>Hyundai i20 1.6</h3>
 
-<h3>Hyundai i20 1.6</h3>
+    <p class="price">R89 900</p>
 
-<p class="price">R89 900</p>
+    <p>2012 • Manual • Petrol</p>
 
-<p>2012 • Manual • Petrol</p>
+    <p>219 804 km</p>
 
-<p>219 804 km</p>
-
-<a href="hi20.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="hi20.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Ford -->
 
-<div class="car-card"
 
-data-make="ford"
+<div class="car-card" data-make="ford" data-price="79900">
 
-data-price="79900">
+    <img src="pictures/cars/ikonmain.jpeg" alt="Ford Ikon">
 
-<img src="pictures/cars/ikonmain.jpeg" alt="Mazda 3">
+    <h3>Ford Ikon</h3>
 
-<h3>Ford Ikon</h3>
+    <p class="price">R79 900</p>
 
-<p class="price">R79 900</p>
+    <p>2013 • Manual • Petrol</p>
 
-<p>2013 • Manual • Petrol</p>
+    <p>136 157 km</p>
 
-<p>136 157 km</p>
-
-<a href="ikon.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="ikon.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Volkswagen -->
 
-<div class="car-card"
 
-data-make="volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/tsi1main.jpeg" alt="Volkswagen Polo">
 
-<img src="pictures/cars/tsi1main.jpeg" alt="Mazda 3">
+    <h3>Vw Polo TSI 1.2</h3>
 
-<h3>Vw Polo TSI 1.2</h3>
+    <p class="price">R149 900</p>
 
-<p class="price">R149 900</p>
+    <p>2017 • Manual • Petrol</p>
 
-<p>2017 • Manual • Petrol</p>
+    <p>212 558 km</p>
 
-<p>212 558 km</p>
-
-<a href="tsi1.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="tsi1.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Hyundai -->
 
-<div class="car-card"
 
-data-make="hyundai"
+<div class="car-card" data-make="hyundai" data-price="189900">
 
-data-price="189900">
+    <img src="pictures/cars/tucsonmain.jpeg" alt="Hyundai Tucson">
 
-<img src="pictures/cars/tucsonmain.jpeg" alt="Mazda 3">
+    <h3>Hyundai Tucson 2.0</h3>
 
-<h3>Hyundai Tucson 2.0</h3>
+    <p class="price">R189 900</p>
 
-<p class="price">R189 900</p>
+    <p>2018 • Automatic • Petrol</p>
 
-<p>2018 • Automatic • Petrol</p>
+    <p>100 717 km</p>
 
-<p>100 717 km</p>
-
-<a href="tucson.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="tucson.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Ford -->
 
-<div class="car-card"
 
-data-make="ford"
+<div class="car-card" data-make="ford" data-price="189900">
 
-data-price="189900">
+    <img src="pictures/cars/everestmain.jpeg" alt="Ford Everest">
 
-<img src="pictures/cars/everestmain.jpeg" alt="Mazda 3">
+    <h3>Ford Everest 2.2</h3>
 
-<h3>Ford Everest 2.2</h3>
+    <p class="price">R189 900</p>
 
-<p class="price">R189 900</p>
+    <p>2018 • Automatic • Diesel</p>
 
-<p>2018 • Automatic • Diesel</p>
+    <p>158 910 km</p>
 
-<p>158 910 km</p>
-
-<a href="everest.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="everest.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Volkswagen -->
 
-<div class="car-card"
 
-data-make="volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="149900">
 
-data-price="149900">
+    <img src="pictures/cars/tsi2main.jpeg" alt="Volkswagen Polo">
 
-<img src="pictures/cars/tsi2main.jpeg" alt="Mazda 3">
+    <h3>Vw Polo TSI 1.2</h3>
 
-<h3>Vw Polo TSI 1.2</h3>
+    <p class="price">R159 900</p>
 
-<p class="price">R159 900</p>
+    <p>2017 • Manual • Petrol</p>
 
-<p>2017 • Manual • Petrol</p>
+    <p>213 104 km</p>
 
-<p>213 104 km</p>
-
-<a href="tsi2.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="tsi2.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
-<!-- Volkswagen -->
 
-<div class="car-card"
 
-data-make="volkswagen"
+<div class="car-card" data-make="volkswagen" data-price="99900">
 
-data-price="99900">
+    <img src="pictures/cars/polo6main.jpeg" alt="Volkswagen Polo">
 
-<img src="pictures/cars/polo6main.jpeg" alt="Mazda 3">
+    <h3>Vw Polo 6 1.4</h3>
 
-<h3>Vw Polo 6 1.4</h3>
+    <p class="price">SOLD</p>
 
-<p class="price">SOLD</p>
+    <p>2011 • Manual • Petrol</p>
 
-<p>2011 • Manual • Petrol</p>
+    <p>260 391 km</p>
 
-<p>260 391 km</p>
-
-<a href="polo6.html" class="details-btn">
-
-View Details
-
-</a>
+    <a href="polo6.html" class="details-btn">
+        View Details
+    </a>
 
 </div>
 
 
 </section>
 
+
+
 <footer>
 
-<p>© 2026 M.I Motor Sales</p>
+    <p>
+        ©️ 2026 M.I Motor Sales
+    </p>
 
-<p>Wishing You Many Miles With Smiles</p>
+    <p>
+        Wishing You Many Miles With Smiles
+    </p>
 
 </footer>
+
+
+
 <script>
 
 function searchCars() {
 
-    const search = document.getElementById("searchInput").value.toLowerCase().trim();
-    const make = document.getElementById("makeFilter").value;
-    const price = document.getElementById("priceFilter").value;
+    const search =
+        document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
 
-    const cars = document.querySelectorAll(".car-card");
 
-    cars.forEach(function(car){
+    const make =
+        document
+            .getElementById("makeFilter")
+            .value
+            .toLowerCase();
 
-        const title = car.querySelector("h3").textContent.toLowerCase();
-        const carMake = car.getAttribute("data-make").toLowerCase();
-        const carPrice = parseInt(car.getAttribute("data-price"));
+
+    const price =
+        document
+            .getElementById("priceFilter")
+            .value;
+
+
+    const cars =
+        document.querySelectorAll(".car-card");
+
+
+    cars.forEach(function(car) {
+
+        const title =
+            car
+                .querySelector("h3")
+                .textContent
+                .toLowerCase();
+
+
+        const carMake =
+            car
+                .getAttribute("data-make")
+                .toLowerCase();
+
+
+        const carPrice =
+            parseInt(
+                car.getAttribute("data-price")
+            ) || 0;
+
 
         let show = true;
 
-        /* Search by make or model */
-        if(search !== "" && !title.includes(search)){
+
+        if (
+            search !== "" &&
+            !title.includes(search) &&
+            !carMake.includes(search)
+        ) {
+
             show = false;
+
         }
 
-        /* Filter by make */
-        if(make !== "all" && carMake !== make){
+
+        if (
+            make !== "all" &&
+            carMake !== make
+        ) {
+
             show = false;
+
         }
 
-        /* Filter by price */
 
-        if(price === "below100" && carPrice >= 100000){
+        if (
+            price === "below100" &&
+            carPrice >= 100000
+        ) {
+
             show = false;
+
         }
 
-        if(price === "100-200" && (carPrice < 100000 || carPrice > 200000)){
+
+        if (
+            price === "100-200" &&
+            (
+                carPrice < 100000 ||
+                carPrice > 200000
+            )
+        ) {
+
             show = false;
+
         }
 
-        if(price === "200-300" && (carPrice < 200000 || carPrice > 300000)){
+
+        if (
+            price === "200-300" &&
+            (
+                carPrice < 200000 ||
+                carPrice > 300000
+            )
+        ) {
+
             show = false;
+
         }
 
-        if(price === "above300" && carPrice <= 300000){
+
+        if (
+            price === "above300" &&
+            carPrice <= 300000
+        ) {
+
             show = false;
+
         }
 
-        car.style.display = show ? "block" : "none";
+
+        car.style.display =
+            show ? "" : "none";
 
     });
 
 }
 
-/* Live Search */
 
-document.getElementById("searchInput").addEventListener("keyup", searchCars);
 
-document.getElementById("makeFilter").addEventListener("change", searchCars);
+document
+    .getElementById("searchInput")
+    .addEventListener(
+        "input",
+        searchCars
+    );
 
-document.getElementById("priceFilter").addEventListener("change", searchCars);
+
+document
+    .getElementById("makeFilter")
+    .addEventListener(
+        "change",
+        searchCars
+    );
+
+
+document
+    .getElementById("priceFilter")
+    .addEventListener(
+        "change",
+        searchCars
+    );
 
 </script>
+
+
+
+<!-- SUPABASE -->
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+
+<script>
+
+const IMPORT_SUPABASE_URL =
+    'https://euzzimaavoqmprigbxnd.supabase.co';
+
+
+const IMPORT_SUPABASE_KEY =
+    'sb_publishable_LCh3q5lUckmSqdovX7Kwng_Zazv1_DJ';
+
+
+const importDB =
+    supabase.createClient(
+        IMPORT_SUPABASE_URL,
+        IMPORT_SUPABASE_KEY
+    );
+
+
+async function importExistingVehicles() {
+
+    const cards =
+        document.querySelectorAll(
+            '.car-card'
+        );
+
+
+    console.log(
+        'Vehicles found:',
+        cards.length
+    );
+
+
+    if (!cards.length) {
+        return;
+    }
+
+
+    const vehicles = [];
+
+
+    cards.forEach(
+        (card, index) => {
+
+            const title =
+                card
+                    .querySelector('h3')
+                    ?.textContent
+                    .trim() || '';
+
+
+            const image =
+                card
+                    .querySelector('img')
+                    ?.getAttribute('src') || '';
+
+
+            const detail =
+                card
+                    .querySelector('a.details-btn')
+                    ?.getAttribute('href') || '';
+
+
+            const make =
+                card
+                    .getAttribute('data-make')
+                    ?.trim() || '';
+
+
+            const dataPrice =
+                card
+                    .getAttribute('data-price') || '0';
+
+
+            const priceText =
+                card
+                    .querySelector('.price')
+                    ?.textContent
+                    .trim() || '';
+
+
+            const information =
+                [
+                    ...card.querySelectorAll('p')
+                ]
+                .map(
+                    p => p.textContent.trim()
+                )
+                .filter(Boolean);
+
+
+            let year = null;
+            let mileage = 0;
+            let transmission = '';
+            let fuel = '';
+
+
+            const yearMatch =
+                information
+                    .join(' ')
+                    .match(
+                        /\b(19|20)\d{2}\b/
+                    );
+
+
+            if (yearMatch) {
+
+                year =
+                    parseInt(
+                        yearMatch[0]
+                    );
+
+            }
+
+
+            const mileageMatch =
+                information
+                    .join(' ')
+                    .match(
+                        /([\d\s,]+)\s*km/i
+                    );
+
+
+            if (mileageMatch) {
+
+                mileage =
+                    parseInt(
+                        mileageMatch[1]
+                            .replace(
+                                /[,\s]/g,
+                                ''
+                            )
+                    ) || 0;
+
+            }
+
+
+            const lowerInfo =
+                information
+                    .join(' ')
+                    .toLowerCase();
+
+
+            if (
+                lowerInfo.includes(
+                    'automatic'
+                )
+            ) {
+
+                transmission =
+                    'Automatic';
+
+            }
+
+            else if (
+                lowerInfo.includes(
+                    'manual'
+                )
+            ) {
+
+                transmission =
+                    'Manual';
+
+            }
+
+
+            if (
+                lowerInfo.includes(
+                    'diesel'
+                )
+            ) {
+
+                fuel =
+                    'Diesel';
+
+            }
+
+            else if (
+                lowerInfo.includes(
+                    'petrol'
+                )
+            ) {
+
+                fuel =
+                    'Petrol';
+
+            }
+
+
+            let status =
+                'available';
+
+
+            if (
+                priceText
+                    .toLowerCase()
+                    .includes('sold')
+            ) {
+
+                status =
+                    'sold';
+
+            }
+
+
+            const price =
+                parseFloat(
+                    dataPrice
+                ) || 0;
+
+
+            const stockNumber =
+                'WEB-' +
+                String(index + 1)
+                    .padStart(4, '0');
+
+
+            vehicles.push({
+
+                stock_number:
+                    stockNumber,
+
+                make:
+                    make,
+
+                model:
+                    title,
+
+                year:
+                    year,
+
+                price:
+                    price,
+
+                mileage:
+                    mileage,
+
+                transmission:
+                    transmission,
+
+                fuel:
+                    fuel,
+
+                image_url:
+                    image,
+
+                detail_page:
+                    detail,
+
+                status:
+                    status,
+
+                published:
+                    true
+
+            });
+
+        }
+    );
+
+
+    console.table(
+        vehicles
+    );
+
+
+    const {
+        data,
+        error
+    } =
+        await importDB
+            .from('vehicles')
+            .upsert(
+                vehicles,
+                {
+                    onConflict:
+                        'stock_number'
+                }
+            )
+            .select();
+
+
+    if (error) {
+
+        console.error(
+            'Supabase import error:',
+            error
+        );
+
+        return;
+
+    }
+
+
+    console.log(
+        'Imported vehicles:',
+        data
+    );
+
+}
+
+
+setTimeout(
+    importExistingVehicles,
+    1500
+);
+
+</script>
+
 
 </body>
 </html>

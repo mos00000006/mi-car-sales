@@ -1,242 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="icon" type="image/png" href="/pictures/logo.png">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M.I Car Sales | Wishing You Many Miles With Smiles</title>
+    <link rel="icon" type="image/png" href="pictures/logo.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="style.css">
+    <title>M.I Car Sales | Wishing You Many Miles With Smiles</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
 </head>
 
 <body>
 
-<!-- Header -->
+<!-- ==========================================
+     HEADER
+========================================== -->
 
 <header>
 
-<div class="logo">
+    <div class="logo">
 
-<img src="pictures/logo.png" alt="M.I Motor Sales Logo">
+        <img
+            src="pictures/logo.png"
+            alt="M.I Motor Sales Logo"
+        >
 
-<div>
+        <div>
 
-<h1>M.I Car Sales</h1>
+            <h1>M.I Car Sales</h1>
 
-<p>Wishing You Many Miles With Smiles</p>
+            <p>Wishing You Many Miles With Smiles</p>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
-<nav>
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="vehicles.html">Vehicles</a></li>
-        <li><a href="#sell">Sell Your Car</a></li>
-        <li><a href="location.html">Location</a></li>
-        <li><a href="index.html#about">About</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
 
-        <li class="staff-crm-item">
-            <a href="crm.html" class="staff-crm-link">
-                <span class="lock-icon">🔒</span> Staff CRM
-            </a>
-        </li>
-    </ul>
-</nav>
+    <nav>
+
+        <ul>
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="vehicles.html">
+                    Vehicles
+                </a>
+            </li>
+
+            <li>
+                <a href="#sell">
+                    Sell Your Car
+                </a>
+            </li>
+
+            <li>
+                <a href="location.html">
+                    Location
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#contact">
+                    Contact
+                </a>
+            </li>
+
+            <li class="staff-crm-item">
+
+                <a
+                    href="crm.html"
+                    class="staff-crm-link"
+                >
+                    <span class="lock-icon">🔒</span>
+                    Staff CRM
+                </a>
+
+            </li>
+
+        </ul>
+
+    </nav>
 
 </header>
 
-<!-- Hero -->
+
+<!-- ==========================================
+     HERO
+========================================== -->
 
 <section class="hero">
 
-<div class="overlay">
+    <div class="overlay">
 
-<h2>Drive Home Your Dream Car Today</h2>
+        <h2>
+            Drive Home Your Dream Car Today
+        </h2>
 
-<p>Quality Vehicles • Affordable Prices</p>
+        <p>
+            Quality Vehicles • Affordable Prices
+        </p>
 
-<div class="buttons">
+        <div class="buttons">
 
-<a href="vehicles.html" class="gold-btn">View Vehicles</a>
+            <a
+                href="vehicles.html"
+                class="gold-btn"
+            >
+                View Vehicles
+            </a>
 
-<a href="#contact" class="black-btn">Contact Us</a>
+            <a
+                href="#contact"
+                class="black-btn"
+            >
+                Contact Us
+            </a>
 
-</div>
+        </div>
 
-</div>
+    </div>
 
 </section>
 
-<!-- Featured Cars -->
+
+<!-- ==========================================
+     FEATURED VEHICLES
+========================================== -->
 
 <section class="featured">
 
-<h2>Featured Vehicles</h2>
+    <h2>
+        Featured Vehicles
+    </h2>
 
-<div class="line"></div>
+    <div class="line"></div>
 
-<div class="cars">
 
-<!-- Car 1 -->
+    <!--
+        IMPORTANT:
 
-<div class="car-card">
+        Vehicles will now be loaded here
+        automatically from Supabase.
 
-<img src="pictures/cars/bwm 3 series.jpeg">
+        Do NOT manually put the BMW,
+        Nissan, Toyota or Volkswagen here.
+    -->
 
-<h3>BMW E90 320i idrive Spec</h3>
+    <div
+        class="cars"
+        id="featuredVehicles"
+    >
 
-<p class="price">R109 900</p>
+        <div
+            style="
+                grid-column:1/-1;
+                text-align:center;
+                padding:40px;
+            "
+        >
 
-<p>2010 Model</p>
+            <p>
+                Loading vehicles...
+            </p>
 
-<p>192 451 km</p>
+        </div>
 
-<p>Automatic</p>
-
-<a href="bmw320i.html" class="details-btn">View Details</a>
-
-</div>
-
-<!-- Car 2 -->
-
-<div class="car-card">
-
-<img src="pictures/cars/nissan.jpeg">
-
-<h3>Nissan X-Trail</h3>
-
-<p class="price">PENDING!!!</p>
-
-<p>2013 Model</p>
-
-<p>166 197 km</p>
-
-<p>Manual</p>
-
-<a href="xtrail.html" class="details-btn">View Details</a>
-
-</div>
-
-<!-- Car 3 -->
-
-<div class="car-card">
-
-<img src="pictures/cars/toyota quest.jpeg">
-
-<h3>Toyota Corolla Quest 1.6 Plus</h3>
-
-<p class="price">R129 900</p>
-
-<p>2018 Model</p>
-
-<p>167 330 km</p>
-
-<p>Manual</p>
-
-<a href="toyotaquest.html" class="details-btn">View Details</a>
-
-</div>
-
-<!-- Car 4 -->
-
-<div class="car-card">
-
-<img src="pictures/cars/vw tiguan.jpeg">
-
-<h3>Volkswagen Tiguan 1.4 TSI</h3>
-
-<p class="price">R129 900</p>
-
-<p>2016 Model</p>
-
-<p>239 585 km</p>
-
-<p>Manual</p>
-
-<a href="tiguan.html" class="details-btn">View Details</a>
-
-</div>
-
-</div>
+    </div>
 
 </section>
 
-<!-- Why Choose Us -->
 
-<section class="why" id="about">
+<!-- ==========================================
+     WHY CHOOSE US
+========================================== -->
 
-<h2>Why Choose M.I Car Sales?</h2>
+<section
+    class="why"
+    id="about"
+>
 
-<div class="line"></div>
+    <h2>
+        Why Choose M.I Car Sales?
+    </h2>
 
-<div class="why-box">
+    <div class="line"></div>
 
-<div>✔ Quality Inspected Vehicles</div>
 
-<div>✔ Trade-ins Welcome</div>
+    <div class="why-box">
 
-<div>✔ Excellent Customer Service</div>
+        <div>
+            ✔ Quality Inspected Vehicles
+        </div>
 
-<div>✔ Affordable Prices</div>
+        <div>
+            ✔ Trade-ins Welcome
+        </div>
 
-</div>
+        <div>
+            ✔ Excellent Customer Service
+        </div>
+
+        <div>
+            ✔ Affordable Prices
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     CONTACT
+========================================== -->
+
+<section
+    class="contact"
+    id="contact"
+>
+
+    <h2>
+        Contact Us
+    </h2>
+
+    <div class="line"></div>
+
+
+    <form id="contactForm">
+
+        <input
+            type="text"
+            id="name"
+            placeholder="Full Name"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Email Address"
+            required
+        >
+
+        <input
+            type="text"
+            id="phone"
+            placeholder="Phone Number"
+            required
+        >
+
+        <textarea
+            id="message"
+            placeholder="Message"
+            required
+        ></textarea>
+
+
+        <button
+            type="button"
+            onclick="sendWhatsApp()"
+        >
+            Send Enquiry
+        </button>
+
+    </form>
 
 </section>
 
-<!-- Contact -->
 
-<section class="contact" id="contact">
-
-<h2>Contact Us</h2>
-
-<div class="line"></div>
-
-<form id="contactForm">
-
-<input type="text" id="name" placeholder="Full Name" required>
-
-<input type="email" id="email" placeholder="Email Address" required>
-
-<input type="text" id="phone" placeholder="Phone Number" required>
-
-<textarea id="message" placeholder="Message" required></textarea>
-
-<button type="button" onclick="sendWhatsApp()">
-    Send Enquiry
-</button>
-
-</form>
-
-</section>
+<!-- ==========================================
+     FOOTER
+========================================== -->
 
 <footer>
 
-<p>© 2026 M.I Motor Sales</p>
+    <p>
+        ©️ 2026 M.I Motor Sales
+    </p>
 
-<p>Wishing You Many Miles With Smiles</p>
+    <p>
+        Wishing You Many Miles With Smiles
+    </p>
 
 </footer>
 
+
+<!-- ==========================================
+     WHATSAPP
+========================================== -->
+
 <script>
+
 function sendWhatsApp() {
 
-    const name = document.getElementById("name").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const message = document.getElementById("message").value.trim();
+    const name =
+        document.getElementById("name").value.trim();
 
-    if (!name || !email || !phone || !message) {
+    const email =
+        document.getElementById("email").value.trim();
+
+    const phone =
+        document.getElementById("phone").value.trim();
+
+    const message =
+        document.getElementById("message").value.trim();
+
+
+    if (
+        !name ||
+        !email ||
+        !phone ||
+        !message
+    ) {
+
         alert("Please complete all fields.");
+
         return;
+
     }
+
 
     const text =
 `*NEW ENQUIRY - M.I CAR SALES*
@@ -250,12 +357,25 @@ function sendWhatsApp() {
 💬 Message:
 ${message}`;
 
+
     window.open(
-        "https://wa.me/27710270924?text=" + encodeURIComponent(text),
+        "https://wa.me/27710270924?text=" +
+        encodeURIComponent(text),
         "_blank"
     );
+
 }
+
 </script>
 
+
+<!-- ==========================================
+     VEHICLES JAVASCRIPT
+========================================== -->
+
+<script src="vehicles.js"></script>
+
+
 </body>
+
 </html>
