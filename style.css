@@ -845,3 +845,126 @@ section{
     display:block;
     border:0;
 }
+
+/* MiCarSales Staff CRM button */
+.staff-crm-link{font-weight:800!important;color:#fff!important;background:#1257b8;border-radius:8px;padding:8px 12px!important}
+.staff-crm-link:hover{background:#0d4695!important
+}
+
+.staff-crm-link {
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+    width: auto !important;
+    min-width: max-content !important;
+    padding: 10px 16px !important;
+    line-height: 1 !important;
+}
+nav ul {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: nowrap;
+}
+
+nav ul li {
+    white-space: nowrap;
+}
+/* ==========================================
+   STAFF CRM - FAR RIGHT CORNER
+========================================== */
+
+.staff-crm-link {
+    margin-left: auto !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    white-space: nowrap !important;
+    width: auto !important;
+    min-width: max-content !important;
+
+    padding: 10px 16px !important;
+    line-height: 1 !important;
+
+    color: #ffffff !important;
+    text-decoration: none !important;
+
+    background: transparent !important;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 6px;
+
+    transition: 0.25s ease;
+}
+
+.staff-crm-link:hover {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border-color: #ffffff;
+    color: #ffffff !important;
+}
+
+/* White lock icon */
+.staff-crm-link .lock-icon {
+    color: #ffffff !important;
+    filter: grayscale(1) brightness(0) invert(1) !important;
+    margin-right: 7px;
+    font-size: 14px;
+}
+
+/* Keep navigation on one line */
+nav ul {
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    gap: 20px;
+}
+
+/* Keep all navigation items together */
+nav ul li {
+    white-space: nowrap !important;
+}
+
+/* Push Staff CRM to the far right */
+nav ul li.staff-crm-item {
+    margin-left: auto !important;
+}
+/* STAFF CRM — FORCE TO FAR RIGHT */
+.staff-crm-item {
+    margin-left: auto !important;
+    order: 999 !important;
+}
+
+.staff-crm-link {
+    display: inline-flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+    color: #fff !important;
+    background: transparent !important;
+    border: 1px solid rgba(255,255,255,0.35) !important;
+    border-radius: 6px !important;
+    padding: 9px 14px !important;
+}
+
+.staff-crm-link .lock-icon {
+    color: #fff !important;
+    filter: grayscale(1) brightness(0) invert(1) !important;
+    margin-right: 6px;
+}
+
+/* Navigation */
+nav ul {
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Keep normal menu items together */
+nav ul li {
+    white-space: nowrap !important;
+}
+
+/* CRM gets pushed all the way right */
+nav ul .staff-crm-item {
+    margin-left: auto !important;
+}

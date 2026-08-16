@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>MiCarSales CRM</title>
+<link rel="stylesheet" href="crm.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<div id="loginView" class="login-wrap">
+  <div class="login-card"><div class="brand"><span>MI</span> Car Sales</div><h1>Dealership CRM</h1><p>Manager & sales team portal</p>
+    <form id="loginForm"><label>Email<input id="email" type="email" required></label><label>Password<input id="password" type="password" required></label><button>Sign in</button><div id="loginError" class="error"></div></form>
+  </div>
+</div>
+<div id="appView" class="app hidden">
+  <aside class="sidebar"><div class="brand"><span>MI</span> Car Sales</div><div class="role" id="userRole">CRM</div>
+    <nav><button data-page="dashboard" class="nav active">📊 Dashboard</button><button data-page="leads" class="nav">👥 Leads & Customers</button><button data-page="vehicles" class="nav">🚗 Vehicles</button><button data-page="appointments" class="nav">📅 Appointments</button><button data-page="tradeins" class="nav">🔄 Trade-ins</button><button data-page="sales" class="nav">💰 Sales</button><button data-page="followups" class="nav">🔔 Follow-ups</button><button data-page="reports" class="nav">📈 Reports</button><button data-page="staff" class="nav manager-only" id="staffNav">👔 Staff & Performance</button></nav>
+    <div class="side-bottom"><a href="index.html">← Public website</a><button id="logout">Sign out</button></div>
+  </aside>
+  <main class="main"><header><div><div class="eyebrow">MI CAR SALES</div><h2 id="pageTitle">Management Dashboard</h2></div><div class="userbox"><strong id="userName">User</strong><span id="today"></span></div></header><section id="page"></section></main>
+</div>
+<script src="crm.js"></script>
+</body></html>
