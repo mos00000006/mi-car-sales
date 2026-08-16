@@ -1024,3 +1024,83 @@ nav ul .staff-crm-item {
         flex: 0 0 auto !important;
     }
 }
+/* ==========================================
+   MOBILE NAVIGATION — FORCE HORIZONTAL SWIPE
+========================================== */
+
+@media (max-width: 768px) {
+
+    nav {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    nav ul {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+
+        width: max-content !important;
+        min-width: max-content !important;
+
+        max-width: none !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+
+        white-space: nowrap !important;
+
+        gap: 22px !important;
+
+        padding: 10px 20px !important;
+        margin: 0 !important;
+
+        -webkit-overflow-scrolling: touch !important;
+        touch-action: pan-x !important;
+
+        scrollbar-width: none !important;
+    }
+
+    nav ul::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    nav ul li {
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+        min-width: max-content !important;
+
+        white-space: nowrap !important;
+    }
+
+    nav ul li a {
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+        min-width: max-content !important;
+
+        white-space: nowrap !important;
+
+        text-decoration: none !important;
+    }
+
+    /* Staff CRM stays as the final item */
+    nav ul .staff-crm-item {
+        margin-left: 0 !important;
+        flex: 0 0 auto !important;
+    }
+
+    .staff-crm-link {
+        display: inline-flex !important;
+        flex: 0 0 auto !important;
+
+        width: auto !important;
+        min-width: max-content !important;
+
+        white-space: nowrap !important;
+    }
+}
