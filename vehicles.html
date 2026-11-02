@@ -2039,12 +2039,12 @@ async function importExistingVehicles() {
 }
 
 
-setTimeout(
-    importExistingVehicles,
-    1500
-);
+// The public catalogue now reads from Supabase. Do not push the old
+// hard-coded cards back into the database on every customer visit.
 
 </script>
+
+<script src="catalog.js"></script>
 
 
 </body>

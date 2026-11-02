@@ -974,3 +974,22 @@ nav ul li.staff-crm-item {
         white-space: nowrap;
     }
 }
+.catalog-status {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: #d6a72f;
+    color: #111;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+}
+
+.catalog-empty {
+    grid-column: 1 / -1;
+    padding: 52px 24px;
+    text-align: center;
+}

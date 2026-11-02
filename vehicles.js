@@ -217,7 +217,7 @@ function createFeaturedCard(car) {
 // LOAD FEATURED VEHICLES
 // =====================================================
 
-function loadFeaturedVehicles() {
+async function loadFeaturedVehicles() {
 
     if (!featuredVehicles) {
 
@@ -240,9 +240,92 @@ function loadFeaturedVehicles() {
             .join('');
 
 
-    console.log(
-        '4 featured vehicles loaded.'
-    );
+    try {
+
+        const { data, error } =
+            await websiteDB
+                .from('vehicles')
+                .select(
+                    'stock_number,make,model,year,price,mileage,' +
+                    'transmission,fuel,status,published,photos,' +
+                    'image_url,detail_page'
+                );
+
+        if (error) {
+            throw error;
+        }
+
+        const liveCars =
+            (data || [])
+                .filter(car => {
+                    const status =
+                        String(car.status || 'available')
+                            .toLowerCase();
+
+                    return car.published !== false &&
+                        ![
+                            'sold',
+                            'removed',
+                            'deleted',
+                            'unavailable'
+                        ].includes(status);
+                })
+                .sort((left, right) =>
+                    String(right.stock_number || '')
+                        .localeCompare(
+                            String(left.stock_number || ''),
+                            undefined,
+                            { numeric: true }
+                        )
+                )
+                .slice(0, 4)
+                .map(car => {
+                    const make = String(car.make || '').trim();
+                    const model = String(car.model || '').trim();
+                    const modelIncludesMake =
+                        make &&
+                        model.toLowerCase()
+                            .startsWith(make.toLowerCase());
+
+                    return {
+                        ...car,
+                        make: modelIncludesMake ? '' : make,
+                        model,
+                        image:
+                            Array.isArray(car.photos) && car.photos.length
+                                ? car.photos[0]
+                                : car.image_url || 'pictures/logo.png',
+                        details:
+                            car.detail_page ||
+                            'https://wa.me/27710270924?text=' +
+                            encodeURIComponent(
+                                'Hi, I am interested in the ' +
+                                [make, model]
+                                    .filter(Boolean)
+                                    .join(' ')
+                            )
+                    };
+                });
+
+        if (liveCars.length) {
+            featuredVehicles.innerHTML =
+                liveCars
+                    .map(createFeaturedCard)
+                    .join('');
+        }
+
+        console.log(
+            `${liveCars.length || 4} featured vehicles loaded.`
+        );
+
+    } catch (error) {
+
+        console.error(
+            'Live featured vehicles could not be loaded:',
+            error
+        );
+
+    }
 
 }
 

@@ -1323,14 +1323,8 @@ async function boot(){
 
     loadPage('dashboard');
 
-    /*
-       Run the public-stock reconciliation in the background.
-       Any Supabase error is caught inside syncWebsiteVehicles().
-    */
-    syncWebsiteVehicles()
-        .catch(error=>{
-            console.error('Background vehicle sync failed:',error);
-        });
+    /* Vehicle stock is now the live source for both the CRM and website.
+       The old hard-coded website list must not recreate removed cars. */
 
 }
 
@@ -1741,32 +1735,13 @@ async function leads(){
 
 async function vehicles(){
 
-    /*
-       Vehicle Stock is a mirror of the public vehicles.html stock.
-       Only those public stock numbers are shown here, which prevents
-       old/incorrect CRM-only records such as "Toyota Verso" or "mmk"
-       from appearing at the bottom.
-    */
-    const publicStockNumbers=WEBSITE_VEHICLES.map(v=>v.stock_number);
-
+    /* Vehicle Stock is the shared source used by the CRM, website,
+       and connected Meta/WhatsApp catalogue. */
     const {data=[]}=await db
         .from('vehicles')
-        .select('*')
-        .in('stock_number',publicStockNumbers);
+        .select('*');
 
-    const publicByStock=new Map(
-        WEBSITE_VEHICLES.map(v=>[v.stock_number,v])
-    );
-
-    /* Always render the public image/status even if Supabase has not
-       finished the background reconciliation yet. */
     const stock=data
-        .map(v=>{
-            const pub=publicByStock.get(v.stock_number);
-            return pub
-                ? {...v,...pub,status:'available'}
-                : v;
-        })
         .sort((a,b)=>
             String(a.stock_number||'').localeCompare(
                 String(b.stock_number||''),
@@ -1801,10 +1776,14 @@ async function vehicles(){
                 >
 
                     ${
-                        v.photos && v.photos.length
+                        (v.photos && v.photos.length) || v.image_url
                         ?
                         `<img
-                            src="${escape(v.photos[0])}"
+                            src="${escape(
+                                v.photos && v.photos.length
+                                    ? v.photos[0]
+                                    : v.image_url
+                            )}"
                             class="vehicle-photo"
                             alt="${escape(v.make+' '+v.model)}"
                         >`
